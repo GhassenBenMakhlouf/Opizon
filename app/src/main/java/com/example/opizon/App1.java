@@ -34,16 +34,24 @@ public class App1 extends AppCompatActivity {
     TextView textView;
     VideoView videoView;
     ArrayList<String> nWords=new ArrayList<String>();
+    ArrayList<String> videosToPlay=new ArrayList<String>();
     int incrementer=0;
+    String sentence;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        try {
-//            readDatabase();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            readDatabase();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        ////////////////////////////////////////////////////////
+        //Example of read from database:
+        String output;
+        output=db.get("ABBREVIATE");
+        Log.i("fffffffffffffff", "onCreate: "+output);
+        ////////////////////////////////////////////////////////
         setContentView(R.layout.activity_app1);
         textView = findViewById(R.id.text);
         videoView = findViewById(R.id.video);
@@ -75,12 +83,14 @@ public class App1 extends AppCompatActivity {
                 if (resultCode == RESULT_OK && null != data) {
                     ArrayList result = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    textView.setText((CharSequence) result.get(0));
+                    sentence = (String) result.get(0);
+                    textView.setText(sentence);
 
                     nWords.add("abbreviate");
                     nWords.add("about");
                     //nWords.add("absolution");
                     //nWords.add("accessible");
+                    setVideos();
                     playVideos();
                 }
                 break;
@@ -88,21 +98,56 @@ public class App1 extends AppCompatActivity {
         }
     }
 
-//    public void readDatabase() throws IOException {
-//        InputStream inputStream = getResources().openRawResource(R.raw.dataset);
-//        BufferedReader reader = new BufferedReader(
-//                new InputStreamReader(inputStream, Charset.forName("UTF-8"))
-//        );
-//        String line = "";
-//        while ((line=reader.readLine()) != null){
-//            String[] tokens = line.split(",");
-//            db.put(tokens[0],tokens[2]);
-//        }
-//    }
+    public void readDatabase() throws IOException {
+        InputStream inputStream = getResources().openRawResource(R.raw.dataset_all_modified);
+        BufferedReader reader = new BufferedReader(
+                new InputStreamReader(inputStream, Charset.forName("UTF-8"))
+        );
+        String line = "";
+        while ((line=reader.readLine()) != null){
+            String[] tokens = line.split(",");
+            db.put(tokens[0],tokens[2]);
+        }
+    }
+
+    public void setVideos(){
+        Log.i("app1", "setVideos: "+sentence);
+        ArrayList<String> words=new ArrayList<String>();
+        String word="";
+        for (int i=0; i<sentence.length(); i++ ){
+            if (sentence.charAt(i)==' '){
+                words.add(word);
+                word="";
+            }
+            else{
+                word+= String.valueOf(sentence.charAt(i));
+            }
+            if (i == sentence.length()-1 && !word.isEmpty()){
+                words.add(word);
+            }
+        }
+        videosToPlay.clear();
+        for (int i=0; i<words.size(); i++ ){
+            Log.i("app1", "word"+i+":  "+words.get(i));
+            if (db.containsKey(words.get(i).toUpperCase())){
+                Log.i("app1", "word "+i+" exist in the db: "+words.get(i));
+                videosToPlay.add(words.get(i));
+            }
+            else{
+                Log.i("app1", "word "+i+" doesn't exist in the db: "+words.get(i));
+                for(int j=0; j<words.size(); j++ ){
+                    videosToPlay.add(String.valueOf(words.get(i).charAt(j)));
+                }
+            }
+
+        }
+
+
+    }
 
     public void playVideos() {
 
-        Uri videoUri = Uri.parse("android.resource://" + App1.this.getPackageName() + "/raw/" + nWords.get(0));
+        Uri videoUri = Uri.parse("android.resource://" + App1.this.getPackageName() + "/raw/" + videosToPlay.get(0));
         videoView.setVideoURI(videoUri);
         videoView.start();
         videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -110,9 +155,9 @@ public class App1 extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp)
             {
-                if (incrementer<nWords.size()-1){
+                if (incrementer<videosToPlay.size()-1){
                     incrementer++;
-                    Uri videoUri = Uri.parse("android.resource://" + App1.this.getPackageName() + "/raw/" + nWords.get(1));
+                    Uri videoUri = Uri.parse("android.resource://" + App1.this.getPackageName() + "/raw/" + videosToPlay.get(1));
                     videoView.setVideoURI(videoUri);
                     videoView.start();
                 }

@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:weightSum="20"
     tools:context = ".MainActivity">
-    <LinearLayout
+    <RelativeLayout
         android:layout_weight="17"
         android:layout_width="match_parent"
         android:layout_height="0dp">
@@ -26,7 +26,7 @@
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="20dp"/>
-    </LinearLayout>
+    </RelativeLayout>
     <RelativeLayout
         android:layout_width = "match_parent"
         android:orientation = "vertical"
