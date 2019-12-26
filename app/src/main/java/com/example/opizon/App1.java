@@ -157,9 +157,10 @@ public class App1 extends AppCompatActivity {
             {
                 if (incrementer<videosToPlay.size()-1){
                     incrementer++;
-                    Uri videoUri = Uri.parse("android.resource://" + App1.this.getPackageName() + "/raw/" + videosToPlay.get(1));
+                    Uri videoUri = Uri.parse("android.resource://" + App1.this.getPackageName() + "/raw/" + videosToPlay.get(incrementer));
                     videoView.setVideoURI(videoUri);
                     videoView.start();
+                    Log.i("app1", "this video has been played: "+videosToPlay.get(incrementer));
                 }
                 else{
                     incrementer=0;
