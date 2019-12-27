@@ -33,7 +33,6 @@ public class App1 extends AppCompatActivity {
     private final int REQ_CODE = 100;
     TextView textView;
     VideoView videoView;
-    ArrayList<String> nWords=new ArrayList<String>();
     ArrayList<String> videosToPlay=new ArrayList<String>();
     int incrementer=0;
     String sentence;
@@ -85,11 +84,8 @@ public class App1 extends AppCompatActivity {
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     sentence = (String) result.get(0);
                     textView.setText(sentence);
+                    sentence=sentence.toLowerCase();
 
-                    nWords.add("abbreviate");
-                    nWords.add("about");
-                    //nWords.add("absolution");
-                    //nWords.add("accessible");
                     setVideos();
                     playVideos();
                 }
