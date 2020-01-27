@@ -2,6 +2,9 @@ package com.example.opizon;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,7 +14,9 @@ import android.content.Intent;
 import android.speech.RecognizerIntent;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
@@ -29,11 +34,14 @@ import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 
 public class App1 extends AppCompatActivity {
-    private HashMap<String,String> db=new HashMap<String,String>();
+    private HashMap<String,String[]> db=new HashMap<String,String[]>();
     private final int REQ_CODE = 100;
     TextView textView;
     VideoView videoView;
+    LinearLayout wordsContainer;
+    Dialog wordsDialog;
     ArrayList<String> videosToPlay=new ArrayList<String>();
+    ArrayList<String> seperatedSentence=new ArrayList<String>();
     int incrementer=0;
     String sentence;
 
@@ -45,15 +53,11 @@ public class App1 extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        ////////////////////////////////////////////////////////
-        //Example of read from database:
-        String output;
-        output=db.get("ABBREVIATE");
-        Log.i("fffffffffffffff", "onCreate: "+output);
-        ////////////////////////////////////////////////////////
         setContentView(R.layout.activity_app1);
         textView = findViewById(R.id.text);
         videoView = findViewById(R.id.video);
+        wordsContainer = (LinearLayout) findViewById(R.id.wordsContainer);
+        wordsDialog = new Dialog(this);
         ImageView speak = findViewById(R.id.speak);
         speak.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +65,7 @@ public class App1 extends AppCompatActivity {
                 Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
                 intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
                         RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
+                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "en-US");
                 intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Need to speak");
                 try {
                     startActivityForResult(intent, REQ_CODE);
@@ -83,11 +87,15 @@ public class App1 extends AppCompatActivity {
                     ArrayList result = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     sentence = (String) result.get(0);
+                    wordsContainer.removeAllViews();
                     textView.setText(sentence);
-                    sentence=sentence.toLowerCase();
+                    //sentence=sentence.toLowerCase();
 
                     setVideos();
                     playVideos();
+                    createButtons();
+
+
                 }
                 break;
             }
@@ -102,7 +110,20 @@ public class App1 extends AppCompatActivity {
         String line = "";
         while ((line=reader.readLine()) != null){
             String[] tokens = line.split(",");
-            db.put(tokens[0],tokens[2]);
+
+            int i=1;
+            String testKey=tokens[0];
+            while (db.containsKey(testKey)){
+                i += 1;
+                testKey=tokens[0]+i;
+            }
+
+            if (i==1){
+                db.put(tokens[0],new String[]{tokens[1],tokens[2]});
+            }
+            else{
+                db.put(testKey,new String[]{tokens[1],tokens[2]});
+            }
         }
     }
 
@@ -123,22 +144,50 @@ public class App1 extends AppCompatActivity {
             }
         }
         videosToPlay.clear();
+        seperatedSentence.clear();
+
         for (int i=0; i<words.size(); i++ ){
-            Log.i("app1", "word"+i+":  "+words.get(i));
-            if (db.containsKey(words.get(i).toUpperCase())){
-                Log.i("app1", "word "+i+" exist in the db: "+words.get(i));
-                videosToPlay.add(words.get(i));
+            Boolean inDatabase=false;
+            ArrayList<String> combinations=new ArrayList<String>();
+            Log.i("app1", "combinations starting with "+words.get(i));
+            combinations.add(words.get(i));
+            Log.i("app1", "combination 0 : "+combinations.get(0));
+            for (int j=i+1; j<words.size(); j++){
+                combinations.add(combinations.get(j-i-1)+' '+words.get(j));
+                Log.i("app1", "combination "+(j-i)+" : "+combinations.get(j-i));
             }
-            else{
-                Log.i("app1", "word "+i+" doesn't exist in the db: "+words.get(i));
-                for(int j=0; j<words.size(); j++ ){
-                    videosToPlay.add(String.valueOf(words.get(i).charAt(j)));
+
+            for (int j=combinations.size()-1; j>=0; j--){
+                Log.i("app1", "checking combination "+(j)+" : "+combinations.get(j));
+                if (db.containsKey(combinations.get(j).toUpperCase())){
+                    Log.i("app1", "combination "+j+" starting from word "+i+" exist in the db: "+combinations.get(j));
+                    String s;
+                    s=db.get(combinations.get(j).toUpperCase())[1];
+                    s=s.substring(0,s.length()-4);
+                    videosToPlay.add(s);
+                    Log.i("app1", "Video added: "+s);
+                    seperatedSentence.add(combinations.get(j));
+                    int wordsNumber=0;
+                    wordsNumber=combinations.get(j).length() - combinations.get(j).replaceAll(" ", "").length() + 1;
+                    i=i+wordsNumber-1;
+                    Log.i("app1", "wordsNumber: "+wordsNumber+" ; new i: "+i);
+                    inDatabase=true;
+                    break;
                 }
             }
-
+            if (!inDatabase){
+                Log.i("app1", "word "+i+" doesn't exist in the db: "+words.get(i));
+                for(int j=0; j<words.get(i).length(); j++ ){
+                    if (db.containsKey(String.valueOf(words.get(i).charAt(j)))){
+                        String s;
+                        s=db.get(String.valueOf(words.get(i).charAt(j)))[1];
+                        s=s.substring(0,s.length()-5);
+                        videosToPlay.add(s);
+                    }
+                }
+                seperatedSentence.add(words.get(i));
+            }
         }
-
-
     }
 
     public void playVideos() {
@@ -146,6 +195,7 @@ public class App1 extends AppCompatActivity {
         Uri videoUri = Uri.parse("android.resource://" + App1.this.getPackageName() + "/raw/" + videosToPlay.get(0));
         videoView.setVideoURI(videoUri);
         videoView.start();
+        Log.i("app1", "this video has been played: "+videosToPlay.get(0));
         videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 
             @Override
@@ -170,6 +220,81 @@ public class App1 extends AppCompatActivity {
 
 
 
+    }
+
+    public void createButtons(){
+
+        for (int i=0;i<seperatedSentence.size();i++){
+            Log.i("app1", "part of seperatedSentence: "+seperatedSentence.get(i));
+            Button wordButton = new Button(this);
+            wordButton.setText(seperatedSentence.get(i));
+            final String word=seperatedSentence.get(i);
+            final ArrayList<String> wordsToShow=new ArrayList<String>();
+            wordButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    TextView txtClose;
+                    TextView txtSwipeRight;
+                    TextView txtSwipeLeft;
+                    TextView txtWord;
+                    TextView txtMeaning;
+                    Button btnConfirm;
+                    wordsDialog.setContentView(R.layout.app1_popup);
+                    txtClose =(TextView) wordsDialog.findViewById(R.id.txtclose);
+                    txtSwipeRight = (TextView) wordsDialog.findViewById(R.id.txtswiperight);
+                    txtSwipeLeft = (TextView) wordsDialog.findViewById(R.id.txtswipeleft);
+                    txtWord = (TextView) wordsDialog.findViewById(R.id.txtword);
+                    txtMeaning = (TextView) wordsDialog.findViewById(R.id.txtmeaning);
+                    btnConfirm = (Button) wordsDialog.findViewById(R.id.btnconfirm);
+
+                    int i=1;
+                    wordsToShow.add(word);
+                    String testKey=word;
+                    while (db.containsKey(testKey)){
+                        wordsToShow.add(testKey);
+                        i += 1;
+                        testKey=word+i;
+                    }
+
+                    txtWord.setText(wordsToShow.get(0));
+                    txtMeaning.setText(db.get(wordsToShow.get(0).toUpperCase())[0]);
+
+                    txtClose.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            wordsDialog.dismiss();
+                        }
+                    });
+
+                    txtSwipeLeft.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                        }
+                    });
+
+                    txtSwipeRight.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                        }
+                    });
+
+                    btnConfirm.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                        }
+                    });
+
+
+                    wordsDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                    wordsDialog.show();
+                }
+            });
+            wordsContainer.addView(wordButton);
+
+        }
     }
 
 }

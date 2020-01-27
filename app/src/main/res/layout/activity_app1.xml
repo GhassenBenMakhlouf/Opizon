@@ -24,8 +24,15 @@
             android:layout_width = "wrap_content"
             android:layout_height = "wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
+            android:layout_above="@+id/wordsContainer"
             android:layout_marginBottom="20dp"/>
+        <LinearLayout
+            android:id = "@+id/wordsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal" />
     </RelativeLayout>
     <RelativeLayout
         android:layout_width = "match_parent"

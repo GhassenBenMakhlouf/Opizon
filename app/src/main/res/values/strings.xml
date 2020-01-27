@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Opizon</string>
+    <string name="close_btn">X</string>
+    <string name="swipe_right_btn">&gt;</string>
+    <string name="swipe_left_btn"> &lt; </string>
+
 </resources>
