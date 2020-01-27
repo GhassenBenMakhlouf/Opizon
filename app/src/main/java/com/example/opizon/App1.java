@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -13,13 +14,18 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.speech.RecognizerIntent;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextSwitcher;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
+import android.widget.ViewSwitcher;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -178,14 +184,14 @@ public class App1 extends AppCompatActivity {
             if (!inDatabase){
                 Log.i("app1", "word "+i+" doesn't exist in the db: "+words.get(i));
                 for(int j=0; j<words.get(i).length(); j++ ){
-                    if (db.containsKey(String.valueOf(words.get(i).charAt(j)))){
+                    if (db.containsKey(String.valueOf(words.get(i).charAt(j)).toUpperCase())){
                         String s;
-                        s=db.get(String.valueOf(words.get(i).charAt(j)))[1];
-                        s=s.substring(0,s.length()-5);
+                        s=db.get(String.valueOf(words.get(i).charAt(j)).toUpperCase())[1];
+                        s=s.substring(0,s.length()-4);
                         videosToPlay.add(s);
+                        seperatedSentence.add(String.valueOf(words.get(i).charAt(j)));
                     }
                 }
-                seperatedSentence.add(words.get(i));
             }
         }
     }
@@ -228,36 +234,67 @@ public class App1 extends AppCompatActivity {
             Log.i("app1", "part of seperatedSentence: "+seperatedSentence.get(i));
             Button wordButton = new Button(this);
             wordButton.setText(seperatedSentence.get(i));
-            final String word=seperatedSentence.get(i);
+            final String actualWord=seperatedSentence.get(i);
             final ArrayList<String> wordsToShow=new ArrayList<String>();
+            wordsToShow.clear();
+            final int finalI = i;
             wordButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     TextView txtClose;
                     TextView txtSwipeRight;
                     TextView txtSwipeLeft;
-                    TextView txtWord;
-                    TextView txtMeaning;
+                    final TextSwitcher SwitcherWord;
+                    final TextSwitcher SwitcherMeaning;
+                    final TextView[] txtWord = new TextView[1];
+                    final TextView[] txtMeaning = new TextView[1];
                     Button btnConfirm;
                     wordsDialog.setContentView(R.layout.app1_popup);
                     txtClose =(TextView) wordsDialog.findViewById(R.id.txtclose);
                     txtSwipeRight = (TextView) wordsDialog.findViewById(R.id.txtswiperight);
                     txtSwipeLeft = (TextView) wordsDialog.findViewById(R.id.txtswipeleft);
-                    txtWord = (TextView) wordsDialog.findViewById(R.id.txtword);
-                    txtMeaning = (TextView) wordsDialog.findViewById(R.id.txtmeaning);
+                    SwitcherWord= wordsDialog.findViewById(R.id.textswitcher1);
+                    SwitcherMeaning= wordsDialog.findViewById(R.id.textswitcher2);
                     btnConfirm = (Button) wordsDialog.findViewById(R.id.btnconfirm);
 
-                    int i=1;
-                    wordsToShow.add(word);
-                    String testKey=word;
-                    while (db.containsKey(testKey)){
-                        wordsToShow.add(testKey);
-                        i += 1;
-                        testKey=word+i;
+                    String word=actualWord;
+                    final int[] wordPosition = {0};
+                    if (Character.isDigit(word.charAt(word.length()-1))) {
+                        word = word.substring(0,word.length()-1);
                     }
+                    int j=2;
+                    wordsToShow.add(word);
+                    String testKey=word+j;
+                    while (db.containsKey(testKey.toUpperCase())){
+                        wordsToShow.add(testKey);
+                        j += 1;
+                        testKey=word+j;
+                    }
+                    Log.i("app1", "wordsToShow Size: "+wordsToShow.size());
 
-                    txtWord.setText(wordsToShow.get(0));
-                    txtMeaning.setText(db.get(wordsToShow.get(0).toUpperCase())[0]);
+                    SwitcherWord.setFactory(new ViewSwitcher.ViewFactory() {
+                        @Override
+                        public View makeView() {
+                            txtWord[0] = new TextView(App1.this);
+                            txtWord[0].setTextColor(Color.WHITE);
+                            txtWord[0].setGravity(Gravity.CENTER_HORIZONTAL);
+                            txtWord[0].setTypeface(Typeface.DEFAULT_BOLD);
+                            return txtWord[0];
+                        }
+                    });
+
+                    SwitcherMeaning.setFactory(new ViewSwitcher.ViewFactory() {
+                        @Override
+                        public View makeView() {
+                            txtMeaning[0] = new TextView(App1.this);
+                            txtMeaning[0].setTextColor(Color.WHITE);
+                            txtMeaning[0].setGravity(Gravity.CENTER_HORIZONTAL);
+                            return txtMeaning[0];
+                        }
+                    });
+
+                    SwitcherWord.setText(wordsToShow.get(0));
+                    SwitcherMeaning.setText(db.get(wordsToShow.get(0).toUpperCase())[0]);
 
                     txtClose.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -266,9 +303,23 @@ public class App1 extends AppCompatActivity {
                         }
                     });
 
+
                     txtSwipeLeft.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
+                            if (wordPosition[0] >0){
+                                wordPosition[0]--;
+                                Animation in = AnimationUtils.loadAnimation(App1.this,R.anim.slide_in_left);
+                                Animation out = AnimationUtils.loadAnimation(App1.this,R.anim.slide_out_right);
+                                SwitcherWord.setInAnimation(in);
+                                SwitcherWord.setOutAnimation(out);
+                                SwitcherMeaning.setInAnimation(in);
+                                SwitcherMeaning.setOutAnimation(out);
+                                SwitcherWord.setText(wordsToShow.get(wordPosition[0]));
+                                SwitcherMeaning.setText(db.get(wordsToShow.get(wordPosition[0]).toUpperCase())[0]);
+                                Log.i("app1", "swipe left: "+"wordPosition: "+wordPosition[0]);
+
+                            }
 
                         }
                     });
@@ -276,14 +327,35 @@ public class App1 extends AppCompatActivity {
                     txtSwipeRight.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
+                            if (wordPosition[0] <wordsToShow.size()-1){
+                                wordPosition[0]++;
+                                Animation in = AnimationUtils.loadAnimation(App1.this,R.anim.slide_in_right);
+                                Animation out = AnimationUtils.loadAnimation(App1.this,R.anim.slide_out_left);
+                                SwitcherWord.setInAnimation(in);
+                                SwitcherWord.setOutAnimation(out);
+                                SwitcherMeaning.setInAnimation(in);
+                                SwitcherMeaning.setOutAnimation(out);
+                                SwitcherWord.setText(wordsToShow.get(wordPosition[0]));
+                                SwitcherMeaning.setText(db.get(wordsToShow.get(wordPosition[0]).toUpperCase())[0]);
+                                Log.i("app1", "swipe right: "+"wordPosition: "+wordPosition[0]);
+                            }
 
                         }
                     });
 
+
                     btnConfirm.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-
+                            String s;
+                            s=db.get(wordsToShow.get(wordPosition[0]).toUpperCase())[1];
+                            s=s.substring(0,s.length()-4);
+                            videosToPlay.set(finalI,s);
+                            seperatedSentence.set(finalI,wordsToShow.get(wordPosition[0]));
+                            wordsDialog.dismiss();
+                            playVideos();
+                            wordsContainer.removeAllViews();
+                            createButtons();
                         }
                     });
 
