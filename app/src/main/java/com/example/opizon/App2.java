@@ -1,7 +1,10 @@
 package com.example.opizon;
 
 import android.Manifest;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -18,6 +21,7 @@ import android.hardware.camera2.TotalCaptureResult;
 import android.hardware.camera2.params.StreamConfigurationMap;
 import android.media.Image;
 import android.media.ImageReader;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -28,21 +32,36 @@ import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import com.microsoft.projectoxford.face.FaceServiceClient;
+import com.microsoft.projectoxford.face.FaceServiceRestClient;
+import com.microsoft.projectoxford.face.contract.Face;
+
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Random;
 
 
 public class App2 extends AppCompatActivity {
+
+    //<------------------------------------>
+    //|           CAMERA API 2             |
+    //<------------------------------------>
 
     private static final String TAG = "AndroidCameraApi2_App2";
     private Button startButton;
@@ -199,59 +218,18 @@ public class App2 extends AppCompatActivity {
 
             captureBuilder.set(CaptureRequest.JPEG_ORIENTATION, jpegOrientation);
 
-//            captureBuilder.set(CaptureRequest.JPEG_ORIENTATION, ORIENTATIONS.get(rotation));
-//            final File file = new File(Environment.getExternalStorageDirectory()+"/pic.jpg");
+
             ImageReader.OnImageAvailableListener readerListener = new ImageReader.OnImageAvailableListener() {
                 @Override
                 public void onImageAvailable(ImageReader reader) {
                     Image image = null;
-//                    try {
                     image = reader.acquireLatestImage();
 
                     Bitmap bitmapImage = ImageHelper.loadSizeLimitedBitmapFromImage(image, jpegOrientation);
-                    Global.cachedBitmap = bitmapImage;
-//                    ByteArrayOutputStream baoStream = new ByteArrayOutputStream();
-//                    bitmapImage.compress(Bitmap.CompressFormat.PNG, 100, baoStream);
-//                    byte[] b = baoStream.toByteArray();
 
-//                    createImageFromBitmap(bitmapImage);
+                    detectEmotionFromBitmap(bitmapImage);
 
 
-
-                    Intent intent = new Intent(App2.this, QuoteActivity.class);
-                    intent.putExtra("QUOTE_MODE","emotion");
-//                    intent.putExtra("IMAGE", bytes);
-                    startActivity(intent);
-
-
-//                        runOnUiThread(new Runnable() {
-//                            @Override
-//                            public void run() {
-//                                FrameLayout fragmentLayout = new FrameLayout(App3.this);
-//                                // set the layout params to fill the activity
-//                                fragmentLayout.setLayoutParams(new  ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-//                                // set an id to the layout
-//                                fragmentLayout.setId(R.id.fragmentLayout); // some positive integer
-//                                // set the layout as Activity content
-//                                setContentView(fragmentLayout);
-//                            }
-//                        });
-//
-//                        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-//                        QuoteFragment quoteFragment = QuoteFragment.newInstance("emotion", bytes);
-//                        ft.replace(R.id.fragmentLayout, quoteFragment);
-//                        ft.addToBackStack(null);
-//                        ft.commit();
-
-
-
-
-
-//                    } catch (FileNotFoundException e) {
-//                        e.printStackTrace();
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    } finally {
                     if (image != null) {
                         image.close();
                     }
@@ -393,4 +371,127 @@ public class App2 extends AppCompatActivity {
         stopBackgroundThread();
         super.onPause();
     }
+
+
+    //<------------------------------------>
+    //|         AZURE FACE API             |
+    //<------------------------------------>
+
+    private String detectedEmotion;
+
+    private final String subscriptionKey = BuildConfig.FACE_SUBSCRIPTION_KEY;
+
+    private final FaceServiceClient faceServiceClient =
+            new FaceServiceRestClient("https://westeurope.api.cognitive.microsoft.com/face/v1.0", subscriptionKey);
+
+    private ProgressDialog detectionProgressDialog;
+
+    private void detectEmotionFromBitmap(final Bitmap imageBitmap) {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
+        ByteArrayInputStream inputStream =
+                new ByteArrayInputStream(outputStream.toByteArray());
+
+        AsyncTask<InputStream, String, Face[]> detectTask =
+                new AsyncTask<InputStream, String, Face[]>() {
+                    String exceptionMessage = "";
+
+                    @Override
+                    protected Face[] doInBackground(InputStream... params) {
+                        try {
+                            publishProgress("Creating your Quote...");
+                            Face[] result = faceServiceClient.detect(
+                                    params[0],
+                                    false,         // returnFaceId
+                                    false,        // returnFaceLandmarks
+                                    // returnFaceAttributes:
+                                    new FaceServiceClient.FaceAttributeType[]{
+                                            FaceServiceClient.FaceAttributeType.Emotion}
+                            );
+                            if (result == null) {
+                                publishProgress(
+                                        "Detection Finished. Nothing detected");
+                                return null;
+                            }
+                            publishProgress(String.format(
+                                    "Detection Finished. %d face(s) detected",
+                                    result.length));
+                            return result;
+                        } catch (Exception e) {
+                            exceptionMessage = String.format(
+                                    "Detection failed: %s", e.getMessage());
+                            return null;
+                        }
+                    }
+
+                    @Override
+                    protected void onPreExecute() {
+                        //TODO: show progress dialog
+                        detectionProgressDialog.show();
+                    }
+
+                    @Override
+                    protected void onProgressUpdate(String... progress) {
+                        //TODO: update progress
+                        detectionProgressDialog.setMessage(progress[0]);
+                    }
+
+                    @Override
+                    protected void onPostExecute(Face[] result) {
+                        //TODO: update face frames
+                        detectionProgressDialog.dismiss();
+
+                        if (!exceptionMessage.equals("")) {
+                            showError(exceptionMessage);
+                        }
+                        if (result == null) return;
+
+                        imageBitmap.recycle();
+
+                        detectedEmotion = getEmotionFromFace(result);
+                    }
+                };
+
+        detectTask.execute(inputStream);
+    }
+
+    private void showError(String message) {
+        new AlertDialog.Builder(this)
+                .setTitle("Error")
+                .setMessage(message)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                    }
+                })
+                .create().show();
+    }
+
+    private String getEmotionFromFace(Face[] faces) {
+
+        for (Face face : faces) {
+            Map<String, Double> emoMap = new HashMap<>();
+            emoMap.put("anger", face.faceAttributes.emotion.anger);
+            emoMap.put("contempt", face.faceAttributes.emotion.contempt);
+            emoMap.put("disgust", face.faceAttributes.emotion.disgust);
+            emoMap.put("fear", face.faceAttributes.emotion.fear);
+            emoMap.put("happiness", face.faceAttributes.emotion.happiness);
+            emoMap.put("neutral", face.faceAttributes.emotion.neutral);
+            emoMap.put("sadness", face.faceAttributes.emotion.sadness);
+            emoMap.put("surprise", face.faceAttributes.emotion.surprise);
+
+            Double maxValueInMap = Collections.max(emoMap.values());
+            String emotion = new String();
+            for (Map.Entry<String, Double> entry : emoMap.entrySet()) {
+                if (entry.getValue() == maxValueInMap) {
+                    emotion = entry.getKey();
+                    break;
+                }
+            }
+            return emotion;
+        }
+        return null;
+    }
+
+
+
 }
