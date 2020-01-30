@@ -120,12 +120,12 @@ AD NAUSEAM,,ad_nauseam.mp4
 ADAM,(as in "the first man"),adam.mp4
 ADAM,(as in "the name"),adam2.mp4
 ADAM AND EVE,(as in "the first man and woman"),adam_and_eve.mp4
-'ADAM''S APPLE',(as in "the body part on neck"),adam1s_apple.mp4
+ADAM'S APPLE,(as in "the body part on neck"),adam1s_apple.mp4
 ADAPT,(as in "change"),adapt.mp4
 ADD,(as in "math addition"),add.mp4
 ADD,(as in "increase or gain"),add2.mp4
 ADD,(as in "attention deficit disorder"),add3.mp4
-ADD,|(as in "the math symbol for addition,_.mp4,ADD4.mp4
+ADD,(as in "the math symbol for addition +"),add4.mp4
 ADD TO,,add_to.mp4
 ADD UP,,add_up.mp4
 ADDICT,,addict.mp4
@@ -227,7 +227,7 @@ AGILE,,agile.mp4
 AGITATED,,agitated.mp4
 AGNOSTIC,(as in "neither faith nor disbelief in God"),agnostic.mp4
 AGO,(as in "in the past- a while ago or long ago"),ago.mp4
-AGO,|(as in "in the more recent past- a few minutes ago,_a_short_time.mp4, or a little while ago")|,AGO2.mp4
+AGO,(as in "in the more recent past or a few minutes ago or a short time or a little while ago"),ago2.mp4
 AGONY,,agony.mp4
 AGREE,,agree.mp4
 AGREEABLE,(as in "cheerful or willing to agree"),agreeable.mp4
@@ -290,7 +290,7 @@ ALL DONE,(as in "a response emphasizing something is done already"),all_done2.mp
 ALL EVENING,,all_evening.mp4
 ALL GONE,(as in "nothing left"),all_gone.mp4
 ALL GONE,(as in "sold out"),all_gone2.mp4
-ALL GONE,|(as in "finished,_when_signing_with_a_chil.mp4,ALL GONE3.mp4
+ALL GONE,(as in "finished when signing with a child"),all_gone3.mp4
 ALL MORNING,,all_morning.mp4
 ALL RIGHT,(as in "alright"),all_right.mp4
 ALL THUMBS,,all_thumbs.mp4
@@ -330,7 +330,7 @@ ALTERNATIVE MEDICINE,,alternative_medicine.mp4
 ALTERNATIVES,,alternatives.mp4
 ALTHOUGH,,although.mp4
 ALWAYS,,always.mp4
-'ALZHEIMER''S DISEASE',,alzheimer1s_disease.mp4
+ALZHEIMER'S DISEASE,,alzheimer1s_disease.mp4
 AM,(as in "ante meridiem"),am.mp4
 AMANDA,(as in "the name"),amanda.mp4
 AMASS,(as in "accumulate"),amass.mp4
@@ -475,7 +475,7 @@ APPROXIMATELY,(as in "close to time"),approximately2.mp4
 APRICOT,,apricot.mp4
 APRIL,(as in "the month"),april.mp4
 APRIL,(as in "the name"),april2.mp4
-'APRIL FOOLS'' DAY',,april_fools1_day.mp4
+APRIL FOOLS' DAY,,april_fools1_day.mp4
 APRON,,apron.mp4
 AQUARIUM,,aquarium.mp4
 ARCHBISHOP,,archbishop.mp4
@@ -563,7 +563,7 @@ ASSISTANT,,assistant.mp4
 ASSOCIATE,,associate.mp4
 ASSOCIATES DEGREE,,associates_degree.mp4
 ASSOCIATION,,association.mp4
-ASSUME,|(as in "to make an assumption,_to_guess_or_estimat.mp4,ASSUME.mp4
+ASSUME,(as in "to make an assumption to guess or estimate"),assume.mp4
 ASSUME,(as in "to accept or take something on"),assume2.mp4
 ASSUMPTION,(as in "assumption into heaven"),assumption.mp4
 ASSURANCE,,assurance.mp4
@@ -645,8 +645,8 @@ AWARE,,aware.mp4
 AWARENESS,,awareness.mp4
 AWAY,,away.mp4
 AWE,,awe.mp4
-AWESOME,|(as in "fantastic,_wonderfu.mp4,AWESOME.mp4
-AWESOME,|(as in "something is cool or neat,_with_awe_or_surpris.mp4,AWESOME2.mp4
+AWESOME,(as in "fantastic wonderful"),awesome.mp4
+AWESOME,(as in "something is cool or neat with awe or surprise"),awesome2.mp4
 AWFUL,,awful.mp4
 AWFUL DAY,,awful_day.mp4
 AWKWARD,,awkward.mp4
@@ -665,11 +665,11 @@ BABYSITTER,,babysitter.mp4
 BACHELOR,,bachelor.mp4
 BACHELOR OF ARTS,(as in "a type of undergraduate degree"),bachelor_of_arts.mp4
 BACHELOR OF SCIENCE,(as in "a type of undergraduate degree"),bachelor_of_science.mp4
-'BACHELOR''S',(as in "an undergraduate degree"),bachelor1s.mp4
-'BACHELOR''S DEGREE',(as in "an undergraduate degree"),bachelor1s_degree.mp4
+BACHELOR'S,(as in "an undergraduate degree"),bachelor1s.mp4
+BACHELOR'S DEGREE,(as in "an undergraduate degree"),bachelor1s_degree.mp4
 BACHELORETTE,,bachelorette.mp4
 BACK,(as in "give me back"),back.mp4
-BACK,|(as in "the body part-the back,_or_a_place/position2back_side_or_rea.mp4,BACK2.mp4
+BACK,(as in "the body part the back or a place/position2back side or rear"),back2.mp4
 BACK,(as in "give you back"),back3.mp4
 BACK,(as in "back together"),back4.mp4
 BACK AND FORTH,,back_and_forth.mp4
@@ -727,7 +727,7 @@ BAND-AID,,band2aid.mp4
 BANDAGE,,bandage.mp4
 BANDANA,,bandana.mp4
 BANDIT,,bandit.mp4
-BANG,|(as in "a sudden,_loud_nois.mp4,BANG.mp4
+BANG,(as in "a sudden loud noise"),bang.mp4
 BANG UP,(as in "to get hurt"),bang_up.mp4
 BANGLADESH,(as in "the country"),bangladesh.mp4
 BANGS,(as in "the hair across the forehead"),bangs.mp4
@@ -1043,7 +1043,7 @@ BLOSSOM,(as in "a person"),blossom2.mp4
 BLOUSE,,blouse.mp4
 BLOW,,blow.mp4
 BLOW OFF,(as in "to ignore"),blow_off.mp4
-'BLOW ONE''S TOP',,blow_one1s_top.mp4
+BLOW ONE'S TOP,,blow_one1s_top.mp4
 BLOW UP,(as in "TO BURST OUT IN ANGER"),blow_up.mp4
 BLOW UP BALLOON,,blow_up_balloon.mp4
 BLUE,(as in "the color"),blue.mp4
@@ -1068,7 +1068,7 @@ BOB,(as in "the name"),bob.mp4
 BODY,,body.mp4
 BOGUS,,bogus.mp4
 BOIL,,boil.mp4
-BOLD,|(as in "to be brave,_or_outgoin.mp4,BOLD.mp4
+BOLD,(as in "to be brave or outgoing"),bold.mp4
 BOLD,(as in "color"),bold2.mp4
 BOLD COLOR,,bold_color.mp4
 BOLIVIA,(as in "the country"),bolivia.mp4
@@ -1115,7 +1115,7 @@ BOULEVARD,,boulevard.mp4
 BOUNCE,(as in "a ball bouncing away"),bounce.mp4
 BOUNCE,(as in "to dribble or bounce a ball"),bounce2.mp4
 BOUNTIFUL,,bountiful.mp4
-BOW,|(as in "the gesture,_to_take_a_bo.mp4,BOW.mp4
+BOW,(as in "the gesture to take a bow"),bow.mp4
 BOW,(as in "a weapon for shooting arrows"),bow2.mp4
 BOW,(as in "bow on a gift or package"),bow3.mp4
 BOW,(as in "a decorative bow or hair bow"),bow4.mp4
@@ -1126,8 +1126,8 @@ BOW TIE,,bow_tie.mp4
 BOW TIE SHIRT,,bow_tie_shirt.mp4
 BOWEL MOVEMENT,,bowel_movement.mp4
 BOWL,(as in "a dish"),bowl.mp4
-BOWLING,|(as in "the verb,_to_bow.mp4,BOWLING.mp4
-BOWLING,|(as in "the noun,_the_sport_of_bowlin.mp4,BOWLING2.mp4
+BOWLING,(as in "the verb to bowl"),bowling.mp4
+BOWLING,(as in "the noun the sport of bowling"),bowling2.mp4
 BOWLING BALL,,bowling_ball.mp4
 BOWLING PINS,,bowling_pins.mp4
 BOX,,box.mp4
@@ -1227,8 +1227,8 @@ BROWSE,,browse.mp4
 BROWSER,(as in "web browser"),browser.mp4
 BRUNEI,(as in "the country"),brunei.mp4
 BRUNETTE,,brunette.mp4
-BRUSH,|(as in "verb,_to_brus.mp4,BRUSH.mp4
-BRUSH,|(as in "noun,_a_brus.mp4,BRUSH2.mp4
+BRUSH,(as in "verb to brush"),brush.mp4
+BRUSH,(as in "noun a brush"),brush2.mp4
 BRUSH YOUR TEETH,,brush_your_teeth.mp4
 BS,(as in "a type of undergraduate degree"),bs.mp4
 BUBBLE,(as in "jacuzzi bubbles"),bubble.mp4
@@ -1242,7 +1242,7 @@ BUCKLE UP,,buckle_up.mp4
 BUDDHIST,,buddhist.mp4
 BUDGET,,budget.mp4
 BUFF,,buff.mp4
-BUFFALO,|(as in "the city - Buffalo,_new_yor.mp4,BUFFALO.mp4
+BUFFALO,(as in "the city Buffalo new york"),buffalo.mp4
 BUFFALO,(as in "an American Buffalo or Bison"),buffalo2.mp4
 BUFFALO,(as in "the animal primarily from Africa and Asia"),buffalo3.mp4
 BUFFALO N.Y.,,buffalo_n3y3.mp4
@@ -1347,7 +1347,7 @@ CALF,(as in "the body part"),calf2.mp4
 CALIFORNIA,(as in "the state"),california.mp4
 CALL,'(as in "someone''s name")',call.mp4
 CALL,(as in "summon someone"),call2.mp4
-CALL,|(as in "to call out,_s.mp4, or scream")|,CALL3.mp4
+CALL,(as in "to call out or scream"),call3.mp4
 CALL,(as in "to call someone by phone"),call4.mp4
 CALL,(as in "to call me by phone"),call5.mp4
 CALL,(as in "to call someone by TTY"),call6.mp4
@@ -1373,7 +1373,7 @@ CAN,(as in "to be able or permitted to do something"),can.mp4
 CAN,(as in "a smaller sized container"),can2.mp4
 CAN,(as in "to can food"),can3.mp4
 CAN,(as in "a larger size container"),can4.mp4
-'CAN''T STAND THAT',,can1t_stand_that.mp4
+CAN'T STAND THAT,,can1t_stand_that.mp4
 CANADA,,canada.mp4
 CANADIAN,(as in "origin from Canada"),canadian.mp4
 CANCEL,(as in "to cancel something"),cancel.mp4
@@ -1389,8 +1389,8 @@ CANNOT FEEL,,cannot_feel.mp4
 CANOE,,canoe.mp4
 CANOEING,,canoeing.mp4
 CANON LAW,(as in "ecclesiastical law"),canon_law.mp4
-CANONIZE,|(as in "verb,_to_canoniz.mp4,CANONIZE.mp4
-CANONIZE,|(as in "adjective,_already_canonize.mp4,CANONIZE2.mp4
+CANONIZE,(as in "verb to canonize"),canonize.mp4
+CANONIZE,(as in "adjective already canonized"),canonize2.mp4
 CANTALOUPE,,cantaloupe.mp4
 CANTOR,(as in "leader of prayer"),cantor.mp4
 CAP,(as in "ballcap"),cap.mp4
@@ -1399,13 +1399,13 @@ CAPABLE,(as in "to be able or permitted to do something"),capable2.mp4
 CAPACITY,,capacity.mp4
 CAPITAL,(as in "money"),capital.mp4
 CAPITAL,(as in "seat of government"),capital2.mp4
-CAPITOL,|(as in "seat of U.S. Congress in Washington,_d3c.mp4,CAPITOL.mp4
+CAPITOL,(as in "seat of U.S. Congress in Washington dc"),capitol.mp4
 CAPITULATE,,capitulate.mp4
 CAPSULE,(as in "medicine- a pill"),capsule.mp4
 CAPTAIN,,captain.mp4
 CAPTION,(as in "closed captions"),caption.mp4
 CAPTION,(as in "a title or short explanation for a article or picture"),caption2.mp4
-CAPTION,|(as in "text or subtitles for a tv show,_movie_or_computer_presenta.mp4, including open or closed captions")|,CAPTION3.mp4
+CAPTION,(as in "text or subtitles for a tv show movie or computer presentation including open or closed captions"),caption3.mp4
 CAPTION,(as in "open captions"),caption4.mp4
 CAPTIVE,,captive.mp4
 CAPTIVITY,,captivity.mp4
@@ -1466,7 +1466,7 @@ CATALOG,,catalog.mp4
 CATARACT,,cataract.mp4
 CATCH,(as in "to catch something in the air"),catch1.mp4
 CATCH,(as in "to catch up"),catch2.mp4
-CATCH,|(as in "to capture someone,_apprehen.mp4,CATCH3.mp4
+CATCH,(as in "to capture someone apprehension"),catch3.mp4
 CATECHISM,,catechism.mp4
 CATEGORY,,category.mp4
 CATERPILLAR,,caterpillar.mp4
@@ -1526,10 +1526,10 @@ CHAMELEON,,chameleon.mp4
 CHAMPAGNE,,champagne.mp4
 CHAMPION,,champion.mp4
 CHANCE,,chance.mp4
-CHANGE,|(as in "alter,_a.mp4, or adjust")|,CHANGE.mp4
+CHANGE,(as in "adjust"),change.mp4
 CHANGE,(as in "coins"),change2.mp4
 CHANGE,(as in "incremental or small changes"),change3.mp4
-CHANGE,|(as in "unchanging,_no_chang.mp4,CHANGE4.mp4
+CHANGE,(as in "unchanging no change"),change4.mp4
 CHANGE,(as in "money"),change5.mp4
 CHANGE,(as in "a bad change"),change6.mp4
 CHANGE,(as in "a good change"),change7.mp4
@@ -1540,7 +1540,7 @@ CHAOS,,chaos.mp4
 CHAPEL,,chapel.mp4
 CHAPTER,,chapter.mp4
 CHARACTER,(as in "an moral character"),character.mp4
-CHARACTER,|(as in "a character in a book,_.mp4, or film")|,CHARACTER2.mp4
+CHARACTER,(as in "a character in a book or film"),character2.mp4
 CHARACTERISTIC,,characteristic.mp4
 CHARCOAL,,charcoal.mp4
 CHARGE,(as in "to charge a credit card"),charge.mp4
@@ -1599,7 +1599,7 @@ CHEWING GUM,,chewing_gum.mp4
 CHICAGO,(as in "the windy city"),chicago.mp4
 CHICK,(as in "a young bird or chicken"),chick.mp4
 CHICKEN,(as in "the animal or the food"),chicken.mp4
-CHICKEN,|(as in "scared,_cowar.mp4,CHICKEN2.mp4
+CHICKEN,(as in "scared cowar"),chicken2.mp4
 CHICKEN EATING,,chicken_eating.mp4
 CHICKEN IS EATING,,chicken_is_eating.mp4
 CHICKEN PECKING,,chicken_pecking.mp4
@@ -1748,7 +1748,7 @@ CLOVER,,clover.mp4
 CLOWN,,clown.mp4
 CLUB,(as in "organization"),club.mp4
 CLUB,(as in "a bar or night club"),club2.mp4
-CLUB,|(as in "a weapon,_malle.mp4,CLUB3.mp4
+CLUB,(as in "a weapon mallet"),club3.mp4
 CLUELESS,,clueless.mp4
 CLUMSY,,clumsy.mp4
 CLUTCH,'(as in "a vehicle''s pedal for controlling the manual transmission")',clutch.mp4
@@ -1786,7 +1786,7 @@ COLLABORATE,,collaborate.mp4
 COLLABORATION,,collaboration.mp4
 COLLAPSE,,collapse.mp4
 COLLAR,(as in "a shirt collar"),collar.mp4
-COLLAR,|(as in "a straight collar,_like_a_priest_ha.mp4,COLLAR2.mp4
+COLLAR,(as in "a straight collar like a priest has"),collar2.mp4
 COLLAR,(as in "fur collar"),collar3.mp4
 COLLARED SHIRT,,collared_shirt.mp4
 COLLECT,(as in "gather up"),collect.mp4
@@ -1803,8 +1803,8 @@ COLON,(as in "the body part"),colon2.mp4
 COLONIES,,colonies.mp4
 COLONIST,,colonist.mp4
 COLONY,,colony.mp4
-COLOR,|(as in "as in the noun,_a_color_or_color.mp4,COLOR.mp4
-COLOR,|(as in "as in the verb,_to_colo.mp4,COLOR2.mp4
+COLOR,(as in "as in the noun a color or colors"),color.mp4
+COLOR,(as in "as in the verb to color"),color2.mp4
 COLORADO,(as in "the state"),colorado.mp4
 COLORFUL,,colorful.mp4
 COLORING,,coloring.mp4
@@ -1814,8 +1814,8 @@ COLUMBIA,(as in "the country"),columbia.mp4
 COLUMBUS,(as in "the capital city of Ohio"),columbus.mp4
 COLUMBUS DAY,,columbus_day.mp4
 COLUMN,(as in "an article"),column.mp4
-COMB,|(as in "verb,_to_com.mp4,COMB.mp4
-COMB,|(as in "noun,_a_com.mp4,COMB2.mp4
+COMB,(as in "verb to comb"),comb.mp4
+COMB,(as in "noun a comb"),comb2.mp4
 COMBAT,,combat.mp4
 COMBINE,,combine.mp4
 COME,,come.mp4
@@ -1872,7 +1872,7 @@ COMPETENT,,competent.mp4
 COMPETITION,,competition.mp4
 COMPLAIN,,complain.mp4
 COMPLAINT,,complaint.mp4
-COMPLETE,|(as in "final or done,_never_doing_it_agai.mp4,COMPLETE.mp4
+COMPLETE,(as in "final or done never doing it again"),complete.mp4
 COMPLETE,(as in "finished"),complete2.mp4
 COMPLETE,(as in "a response emphasizing something is done already"),complete3.mp4
 COMPLEX,,complex.mp4
@@ -1942,7 +1942,7 @@ CONSCIENCE,(as in "guide in your mind"),conscience.mp4
 CONSCIOUS,,conscious.mp4
 CONSECRATE,(as in "create or declare"),consecrate.mp4
 CONSECRATE,(as in "make holy"),consecrate2.mp4
-CONSECRATION,|(as in "create,_.mp4, or declare")|,CONSECRATION.mp4
+CONSECRATION,(as in "create or declare"),consecration.mp4
 CONSECRATION,(as in "make holy"),consecration2.mp4
 CONSERVATIVE,(as in "political belief"),conservative.mp4
 CONSIDER,,consider.mp4
@@ -2007,8 +2007,8 @@ CONVICTION,(as in "a strong belief"),conviction.mp4
 CONVINCE,(as in "convince you"),convince.mp4
 CONVINCE,(as in "convince me"),convince2.mp4
 CONVOCATION,,convocation.mp4
-COOK,|(as in "the person,_a_coo.mp4,COOK.mp4
-COOK,|(as in "verb,_to_coo.mp4,COOK2.mp4
+COOK,(as in "the person a cook"),cook.mp4
+COOK,(as in "verb to cook"),cook2.mp4
 COOKIE,,cookie.mp4
 COOKIE CUTTER,,cookie_cutter.mp4
 COOKIE SHEET,,cookie_sheet.mp4
@@ -2061,7 +2061,7 @@ COUNTRY,(as in "nation"),country2.mp4
 COUNTRY LANE,(as in "one lane in both directions"),country_lane.mp4
 COUNTRY ROAD,(as in "one lane in both directions"),country_road.mp4
 COUP,(as in "a unique opportunity"),coup.mp4
-'COUP D''Ã‰TAT',(as in "a take over"),coup_d1ã‰tat.mp4
+COUP D'ETAT,(as in "a take over"),coup_d1etat.mp4
 COUPLE,,couple.mp4
 COURAGE,,courage.mp4
 COURAGEOUS,,courageous.mp4
@@ -2070,7 +2070,7 @@ COURT,(as in "judicial"),court.mp4
 COURTEOUS,,courteous.mp4
 COURTESY,,courtesy.mp4
 COURTHOUSE,,courthouse.mp4
-COUSIN,|(as in "either male or female cousin,_gender_neutra.mp4,COUSIN.mp4
+COUSIN,(as in "either male or female cousin gender neutral"),cousin.mp4
 COUSIN,(as in "female cousin"),cousin2.mp4
 COUSIN,(as in "male cousin"),cousin3.mp4
 COVENANT,,covenant.mp4
@@ -2098,7 +2098,7 @@ CRAMPS,(as in "a cramp somewhere on the body"),cramps2.mp4
 CRANBERRY,,cranberry.mp4
 CRANKY,,cranky.mp4
 CRAP,(as in "bowel movement or excrement"),crap.mp4
-CRAP,|(as in "the exclamation,_oh_cra.mp4,CRAP2.mp4
+CRAP,(as in "the exclamation oh crap"),crap2.mp4
 CRASH,(as in "a car crash"),crash.mp4
 CRASH,(as in "two things crash into each other"),crash2.mp4
 CRASH,(as in "an airplane crash"),crash3.mp4
@@ -2143,7 +2143,7 @@ CROOK,,crook.mp4
 CROSS,(as in "mad or angry"),cross.mp4
 CROSS,(as in "to cross or go over something"),cross2.mp4
 CROSS,(as in "crucifix"),cross3.mp4
-CROSS COUNTRY,|(as in "the sport of cross-country running,_ri.mp4, skiing, or driving")|,CROSS COUNTRY.mp4
+CROSS COUNTRY,(as in "the sport of cross-country running riding skiing or driving"),cross_country.mp4
 CROSS THE RIVER,,cross_the_river.mp4
 CROSS THE STREET,,cross_the_street.mp4
 CROSS YOUR LEG,,cross_your_leg.mp4
@@ -2165,7 +2165,7 @@ CRUMBLE,,crumble.mp4
 CRUSH,(as in "cramped or crowded"),crush.mp4
 CRUSH,(as in "smash"),crush2.mp4
 CRY,(as in "tears running down a face"),cry.mp4
-CRY,|(as in "to cry out,_shout_or_screa.mp4,CRY2.mp4
+CRY,(as in "to cry out shout or scream"),cry2.mp4
 CRYSTAL,(as in "the name"),crystal.mp4
 CUB,,cub.mp4
 CUBA,(as in "the country"),cuba.mp4
@@ -2175,7 +2175,7 @@ CUCUMBER,,cucumber.mp4
 CUDDLE,,cuddle.mp4
 CULT,,cult.mp4
 CULTURE,,culture.mp4
-CUP,|(as in "for drinking,_a_glass_or_containe.mp4,CUP.mp4
+CUP,(as in "for drinking a glass or container"),cup.mp4
 CUP,(as in "a unit of measure"),cup2.mp4
 CUPBOARD,,cupboard.mp4
 CUPCAKE,,cupcake.mp4
@@ -2242,7 +2242,7 @@ DAMAGE,,damage.mp4
 DAMP,,damp.mp4
 DAN,(as in "the name"),dan.mp4
 DANA,(as in "the name"),dana.mp4
-DANCE,|(as in "the verb- to dance,_or_the_noun2_a_social_gathering_where_you_danc.mp4,DANCE.mp4
+DANCE,(as in "the verb- to dance,_or_the_noun2_a_social_gathering_where_you_dance,dance.mp4
 DANCER,,dancer.mp4
 DANGER,,danger.mp4
 DANGEROUS,,dangerous.mp4
@@ -2449,10 +2449,10 @@ DICE,(as in "dice food"),dice2.mp4
 DICTIONARY,,dictionary.mp4
 DID,,did.mp4
 DID NOT,,did_not.mp4
-'DIDN''T',,didn1t.mp4
-'DIDN''T CARE',,didn1t_care.mp4
-'DIDN''T LIKE',,didn1t_like.mp4
-'DIDN''T WANT',,didn1t_want.mp4
+DIDN'T,,didn1t.mp4
+DIDN'T CARE,,didn1t_care.mp4
+DIDN'T LIKE,,didn1t_like.mp4
+DIDN'T WANT,,didn1t_want.mp4
 DIE,(as in "pass away"),die.mp4
 DIED,,died.mp4
 DIET,,diet.mp4
@@ -2558,7 +2558,7 @@ DIVE INTO,(as in "dive into a topic or subject"),dive_into2.mp4
 DIVERSE,,diverse.mp4
 DIVIDE,(as in "the mathematical concept"),divide.mp4
 DIVIDE,(as in "to break apart"),divide2.mp4
-DIVIDE,|(as in "the obelus math symbol for divide,_ã.mp4,DIVIDE3.mp4
+DIVIDE,(as in "the obelus math symbol for divide"),divide3.mp4
 DIVIDE,(as in "the other math symbol for divide"),divide4.mp4
 DIVINE,,divine.mp4
 DIVINE PROVIDENCE,,divine_providence.mp4
@@ -2582,13 +2582,13 @@ DOCUMENT,,document.mp4
 DOCUMENTATION,,documentation.mp4
 DOES NOT,,does_not.mp4
 DOES NOT EXIST,,does_not_exist.mp4
-'DOESN''T',,doesn1t.mp4
-'DOESN''T CARE',,doesn1t_care.mp4
-'DOESN''T CHANGE',,doesn1t_change.mp4
-'DOESN''T KNOW',,doesn1t_know.mp4
-'DOESN''T LIKE',,doesn1t_like.mp4
-'DOESN''T MATTER',,doesn1t_matter.mp4
-'DOESN''T WANT',,doesn1t_want.mp4
+DOESN'T,,doesn1t.mp4
+DOESN'T CARE,,doesn1t_care.mp4
+DOESN'T CHANGE,,doesn1t_change.mp4
+DOESN'T KNOW,,doesn1t_know.mp4
+DOESN'T LIKE,,doesn1t_like.mp4
+DOESN'T MATTER,,doesn1t_matter.mp4
+DOESN'T WANT,,doesn1t_want.mp4
 DOG,,dog.mp4
 DOGMA,,dogma.mp4
 DOLL,,doll.mp4
@@ -2599,14 +2599,14 @@ DOLPHIN,,dolphin.mp4
 DOMINICA,(as in "the country"),dominica.mp4
 DOMINICAN REPUBLIC,(as in "the country"),dominican_republic.mp4
 DOMINICANS,(as in "a Roman Catholic order"),dominicans.mp4
-'DON''T',,don1t.mp4
-'DON''T BELIEVE',,don1t_believe.mp4
-'DON''T CARE',(as in "having to care for"),don1t_care.mp4
-'DON''T KNOW',,don1t_know.mp4
-'DON''T LIKE',,don1t_like.mp4
-'DON''T MIND',,don1t_mind.mp4
-'DON''T UNDERSTAND',,don1t_understand.mp4
-'DON''T WANT',,don1t_want.mp4
+DON'T,,don1t.mp4
+DON'T BELIEVE,,don1t_believe.mp4
+DON'T CARE,(as in "having to care for"),don1t_care.mp4
+DON'T KNOW,,don1t_know.mp4
+DON'T LIKE,,don1t_like.mp4
+DON'T MIND,,don1t_mind.mp4
+DON'T UNDERSTAND,,don1t_understand.mp4
+DON'T WANT,,don1t_want.mp4
 DONATE,,donate.mp4
 DONATION,,donation.mp4
 DONE,(as in "finished"),done.mp4
@@ -2624,7 +2624,7 @@ DOORMAT,,doormat.mp4
 DORK,,dork.mp4
 DORM,,dorm.mp4
 DORMITORY,,dormitory.mp4
-DOT,|(as in "a decimal point,_pe.mp4, or dot in a website link")|,DOT.mp4
+DOT,(as in "a decimal point or dot in a website link"),dot.mp4
 DOT,(as in "a spot"),dot2.mp4
 DOUBLE,,double1.mp4
 DOUBT,,doubt.mp4
@@ -2674,7 +2674,7 @@ DREAM,(as in "a dream"),dream.mp4
 DREAM,(as in "multiple dreams"),dream2.mp4
 DRESS,(as in "an article of clothing"),dress.mp4
 DRESS,(as in "to get dressed or put clothes on"),dress2.mp4
-DRESS,|(as in "the verb,_to_get_dresse.mp4,DRESS3.mp4
+DRESS,(as in "the verb to get dressed"),dress3.mp4
 DRESS UP,,dress_up.mp4
 DRESSER,,dresser.mp4
 DRESSING,(as in "something like salad dressing"),dressing.mp4
@@ -3208,7 +3208,7 @@ FATE,,fate.mp4
 FATHER,(as in "male parent"),father.mp4
 FATHER,(as in "heavenly father"),father2.mp4
 FATHER,(as in "priest"),father3.mp4
-'FATHER''S DAY',,father1s_day.mp4
+FATHER'S DAY,,father1s_day.mp4
 FATHER-IN-LAW,,father2in2law.mp4
 FATIGUE,,fatigue.mp4
 FATSO,,fatso.mp4
@@ -3274,7 +3274,7 @@ FIERCE,(as in "mean"),fierce2.mp4
 FIFTEEN,,fifteen.mp4
 FIFTH,(as in "in a sequence"),fifth.mp4
 FIFTH,(as in "a thing in a list"),fifth2.mp4
-FIFTH,|(as in "the amount,_1/.mp4,FIFTH3.mp4
+FIFTH,(as in "the amount 1/5"),fifth3.mp4
 FIFTY,,fifty.mp4
 FIFTY PERCENT OFF,,fifty_percent_off.mp4
 FIFTY-EIGHT,,fifty2eight.mp4
@@ -3575,7 +3575,7 @@ FOUR YEARS AGO,,four_years_ago.mp4
 FOUR YEARS FROM NOW,,four_years_from_now.mp4
 FOUR YEARS OLD,,four_years_old.mp4
 FOURTEEN,,fourteen.mp4
-FOURTH,|(as in "the amount,_1/.mp4,FOURTH.mp4
+FOURTH,(as in "the amount 1/4"),fourth.mp4
 FOURTH,(as in "in a sequence"),fourth2.mp4
 FOURTH,(as in "a thing in a list"),fourth3.mp4
 FOURTH OF JULY,,fourth_of_july.mp4
@@ -3812,7 +3812,7 @@ GLANCE,,glance.mp4
 GLARE,(as in "from light"),glare.mp4
 GLARE,(as in "to stare"),glare2.mp4
 GLASS,(as in "the material or substance"),glass.mp4
-GLASS,|(as in "for drinking,_a_cup_or_containe.mp4,GLASS2.mp4
+GLASS,(as in "for drinking a cup or containe"),glass2.mp4
 GLASSES,(as in "any eyeglasses"),glasses.mp4
 GLASSES,(as in "square shaped eyeglasses"),glasses2.mp4
 GLASSES,(as in "round shaped eyeglasses"),glasses3.mp4
@@ -3837,7 +3837,7 @@ GLUE,,glue.mp4
 GO,(as in "go away or gone away"),go.mp4
 GO,(as in "leave"),go2.mp4
 GO,(as in "to go somewhere specific"),go3.mp4
-GO,|(as in "to go,_but_not_naming_a_specific_plac.mp4,GO4.mp4
+GO,(as in "to go but not naming a specific place"),go4.mp4
 GO,(as in "go frequently"),go5.mp4
 GO,(as in "to command someone to go away and donâ€™t come back"),go6.mp4
 GO,(as in "go away and donâ€™t come back"),go7.mp4
@@ -3872,8 +3872,8 @@ GOAT,,goat.mp4
 GOATEE,,goatee.mp4
 GOD,,god.mp4
 GOD BLESS YOU,,god_bless_you.mp4
-'GOD''S MERCY',,god1s_mercy.mp4
-'GOD''S WORD',,god1s_word.mp4
+GOD'S MERCY,,god1s_mercy.mp4
+GOD'S WORD,,god1s_word.mp4
 GODS,,gods.mp4
 GOLD,,gold.mp4
 GOLDEN,,golden.mp4
@@ -4067,7 +4067,7 @@ HAIRSTYLIST,,hairstylist.mp4
 HAITI,(as in "the country"),haiti.mp4
 HALACHA,(as in "Jewish Law"),halacha.mp4
 HALF,(as in "cut something in half"),half.mp4
-HALF,|(as in "the amount,_1/.mp4,HALF2.mp4
+HALF,(as in "the amount 1/2"),half2.mp4
 HALF PRICE,,half_price.mp4
 HALF TIME,,half_time.mp4
 HALF-BROTHER,,half2brother.mp4
@@ -4342,7 +4342,7 @@ HONDURAS,(as in "the country"),honduras.mp4
 HONEST,,honest.mp4
 HONESTY,,honesty.mp4
 HONEY,,honey.mp4
-HONEYDEW,|(as in "the fruit,_melo.mp4,HONEYDEW.mp4
+HONEYDEW,(as in "the fruit melo")honeydew.mp4
 HONEYMOON,,honeymoon.mp4
 HONG KONG,(as in "the region in China"),hong_kong.mp4
 HONK,(as in "a vehicle honking"),honk.mp4
@@ -4352,7 +4352,7 @@ HOOD,,hood.mp4
 HOODIE,,hoodie.mp4
 HOOF PRINT,,hoof_print.mp4
 HOOK,(as in "connect or hook up"),hook.mp4
-HOOKED ON,|(as in "stuck on something,_or_addicted_to_somethin.mp4,HOOKED ON.mp4
+HOOKED ON,(as in "stuck on something or addicted to something"),hooked_on.mp4
 HOOP,(as in "BASKETBALL HOOP"),hoop.mp4
 HOP,,hop.mp4
 HOPE,,hope.mp4
@@ -4802,7 +4802,7 @@ INTRUDE,(as in "to intrude me"),intrude2.mp4
 INUIT,,inuit.mp4
 INUNDATE,,inundate.mp4
 INVADE,,invade.mp4
-INVENT,|(as in "to make up something,_like_a_s.mp4, idea, name")|,INVENT.mp4
+INVENT,(as in "to make up something like a special idea name"),invent.mp4
 INVENTOR,,inventor.mp4
 INVEST,,invest.mp4
 INVESTIGATE,,investigate.mp4
@@ -4849,7 +4849,7 @@ ISSUE,(as in "issuing or receiving a ticket"),issue3.mp4
 IT,,it.mp4
 IT IS LUNCH TIME,,it_is_lunch_time.mp4
 IT IS YOUR RIGHT,,it_is_your_right.mp4
-'IT''S TIME',,it1s_time.mp4
+IT'S TIME,,it1s_time.mp4
 ITALIAN,,italian.mp4
 ITALY,(as in "the country"),italy.mp4
 ITCH,,itch.mp4
@@ -4899,7 +4899,7 @@ JEEP,,jeep.mp4
 JEER,,jeer.mp4
 JEFF,(as in "the name"),jeff.mp4
 JEHOVAH,(as in "God"),jehovah.mp4
-'JEHOVAH''S WITNESSES',,jehovah1s_witnesses.mp4
+JEHOVAH'S WITNESSES,,jehovah1s_witnesses.mp4
 JELLO,,jello.mp4
 JELLY,,jelly.mp4
 JEREMY,(as in "the name"),jeremy.mp4
@@ -4942,7 +4942,7 @@ JOLT,,jolt.mp4
 JON,(as in "the name"),jon.mp4
 JORDAN,(as in "the country"),jordan.mp4
 JOSEPH,(as in "the name"),joseph.mp4
-JOSEPH,|(as in "the husband of Mary,_the_mother_of_jesu.mp4,JOSEPH2.mp4
+JOSEPH,(as in "the husband of Mary the mother of jesus"),joseph2.mp4
 JOSTLE,(as in "to elbow or bump into someone"),jostle.mp4
 JOT,,jot.mp4
 JOT DOWN,,jot_down.mp4
@@ -5090,7 +5090,7 @@ KWANZAA,(as in "a celebration of African American cultural heritage and traditio
 KYRGYZSTAN,(as in "the country"),kyrgyzstan.mp4
 L,(as in "the letter L"),l.mp4
 LAB,(as in "laboratory"),lab.mp4
-LAB,|(as in "the dog breed,_labrado.mp4,LAB2.mp4
+LAB,(as in "the dog breed: labrador"),lab2.mp4
 LABEL,,label.mp4
 LABOR,,labor.mp4
 LABOR DAY,,labor_day.mp4
@@ -5148,7 +5148,7 @@ LATE,,late.mp4
 LATELY,,lately.mp4
 LATER,,later.mp4
 LATIN,(as in "the language"),latin.mp4
-LATIN,|(as in "the ethnicity,_a_person_fro.mp4,LATIN2.mp4
+LATIN,(as in "the ethnicity a person from"),latin2.mp4
 LATIN AMERICA,,latin_america.mp4
 LATIN AMERICAN,,latin_american.mp4
 LATINO,,latino.mp4
@@ -5229,9 +5229,9 @@ LET KNOW,(as in "let one person know"),let_know.mp4
 LET KNOW,(as in "let multiple people know"),let_know2.mp4
 LET ME KNOW,,let_me_know.mp4
 LET ME SEE,,let_me_see.mp4
-'LET''S GO',,let1s_go.mp4
-'LET''S SEE',,let1s_see.mp4
-'LET''S THROW SOME LIGHT ON THE SUBJECT',,let1s_throw_some_light_on_the_subject.mp4
+LET'S GO,,let1s_go.mp4
+LET'S SEE,,let1s_see.mp4
+LET'S THROW SOME LIGHT ON THE SUBJECT,,let1s_throw_some_light_on_the_subject.mp4
 LETTER,(as in "a letter of the alphabet"),letter.mp4
 LETTER,(as in "a letter you mail"),letter2.mp4
 LETTER CARRIER,,letter_carrier.mp4
@@ -5313,8 +5313,8 @@ LITANY,,litany.mp4
 LITER,(as in "unit of measurement"),liter.mp4
 LITHUANIA,(as in "the country"),lithuania.mp4
 LITTLE,(as in "a quantity or amount- a little bit"),little.mp4
-LITTLE,|(as in "the size of something,_it_is_small_or_littl.mp4,LITTLE2.mp4
-LITTLE,|(as in "height- petite,_short_or_littl.mp4,LITTLE3.mp4
+LITTLE,(as in "the size of something: it is small or little"),little2.mp4
+LITTLE,(as in "short or little"),little3.mp4
 LITTLE,(as in "younger"),little4.mp4
 LITTLE BIT,,little_bit.mp4
 LITTLE BITTY,,little_bitty.mp4
@@ -5406,7 +5406,7 @@ LOOSE,,loose.mp4
 LOPSIDED,,lopsided.mp4
 LORD,(as in "God"),lord.mp4
 LORD,(as in "ruler or king"),lord2.mp4
-'LORD''S SUPPER',,lord1s_supper.mp4
+LORD'S SUPPER,,lord1s_supper.mp4
 LOS ANGELES,(as in "the city in California"),los_angeles.mp4
 LOSE,(as in "to lose a game"),lose.mp4
 LOSE,(as in "to lose something"),lose2.mp4
@@ -5507,7 +5507,7 @@ MAINSTREAM,,mainstream.mp4
 MAINSTREAM SCHOOL,,mainstream_school.mp4
 MAINTAIN,,maintain.mp4
 MAJESTIC,,majestic.mp4
-MAJESTY,|(as in "impressive stateliness,_dig.mp4, or beauty")|,MAJESTY.mp4
+MAJESTY,(as in "impressive stateliness dig or beauty"),majesty.mp4
 MAJESTY,(as in "king and queen"),majesty2.mp4
 MAJESTY,(as in "a king"),majesty3.mp4
 MAJESTY,(as in "a queen"),majesty4.mp4
@@ -5570,7 +5570,7 @@ MAP,,map.mp4
 MARBLE,(as in "the toy"),marble.mp4
 MARBLE,(as in "the stone"),marble2.mp4
 MARCH,(as in "the month"),march.mp4
-MARCH,|(as in "the verb,_to_m.mp4, or a parade")|,MARCH2.mp4
+MARCH,(as in "the verb to march or a parade"),march2.mp4
 MARDI GRAS,,mardi_gras.mp4
 MARE,(as in "female horse"),mare.mp4
 MARGARINE,,margarine.mp4
@@ -5610,8 +5610,8 @@ MASTER,,master.mp4
 MASTER CARD,(as in "the type of credit card"),master_card.mp4
 MASTER OF ARTS,(as in "a type of graduate degree"),master_of_arts.mp4
 MASTER OF SCIENCE,(as in "a type of graduate degree"),master_of_science.mp4
-'MASTER''S',(as in "a graduate degree"),master1s.mp4
-'MASTER''S DEGREE',(as in "a graduate degree"),master1s_degree.mp4
+MASTER'S,(as in "a graduate degree"),master1s.mp4
+MASTER'S DEGREE,(as in "a graduate degree"),master1s_degree.mp4
 MATCH,,match.mp4
 MATCHES,(as in "strike to make fire"),matches.mp4
 MATERIAL,(as in "equipment"),material.mp4
@@ -5701,7 +5701,7 @@ MENTAL HOSPITAL,,mental_hospital.mp4
 MENTALLY RETARDED,,mentally_retarded.mp4
 MENTION,,mention.mp4
 MENTOR,(as in "the person"),mentor.mp4
-MENTOR,|(as in "the action,_to_mento.mp4,MENTOR2.mp4
+MENTOR,(as in "the action to mentor"),mentor2.mp4
 MENU,,menu.mp4
 MEOW,(as in "the sound a cat makes"),meow.mp4
 MERCHANDISE,,merchandise.mp4
@@ -5786,7 +5786,7 @@ MINNESOTA,(as in "the state"),minnesota.mp4
 MINNIE,(as in "the name"),minnie.mp4
 MINOR,(as in "secondary focus of study"),minor.mp4
 MINOR,(as in "small or lesser"),minor2.mp4
-MINOR,|(as in "not an adult,_under_182years_ol.mp4,MINOR3.mp4
+MINOR,(as in "not an adult under 18 years old"),minor3.mp4
 MINORITY,,minority.mp4
 MINTY,,minty.mp4
 MINUS,,minus.mp4
@@ -5911,7 +5911,7 @@ MOSQUITO,,mosquito.mp4
 MOST,,most.mp4
 MOST OF THE GROUP,,most_of_the_group.mp4
 MOTHER,(as in "female parent"),mother.mp4
-'MOTHER''S DAY',,mother1s_day.mp4
+MOTHER'S DAY,,mother1s_day.mp4
 MOTHER-IN-LAW,,mother2in2law.mp4
 MOTION,,motion.mp4
 MOTIVATE,,motivate.mp4
@@ -5965,7 +5965,7 @@ MULTIPLE,,multiple.mp4
 MULTIPLE SCLEROSIS,(as in "the chronic disease"),multiple_sclerosis.mp4
 MULTIPLICATION,,multiplication.mp4
 MULTIPLY,(as in "the mathematical concept"),multiply.mp4
-MULTIPLY,|(as in "the math symbol for multiply,_.mp4,MULTIPLY2.mp4
+MULTIPLY,(as in "the math symbol for multiply x"),multiply2.mp4
 MUM,(as in "female parent"),mum.mp4
 MUMMY,(as in "female parent"),mummy.mp4
 MUMPS,,mumps.mp4
@@ -6001,7 +6001,7 @@ MYOPIC,,myopic.mp4
 MYRIAD,,myriad.mp4
 MYRRH,,myrrh.mp4
 MYSELF,,myself.mp4
-MYSELF,|(as in "myself,_but_with_emphasi.mp4,MYSELF2.mp4
+MYSELF,(as in "myself but with emphasis"),myself2.mp4
 MYSTERY,,mystery.mp4
 MYTH,,myth.mp4
 N,(as in "the letter N"),n.mp4
@@ -6107,8 +6107,8 @@ NEW ORLEANS,(as in "the largest city in Louisiana"),new_orleans.mp4
 NEW TESTAMENT,,new_testament.mp4
 NEW YEAR,,new_year.mp4
 NEW YEAR,(as in "Rosh Hashanah"),new_year2.mp4
-'NEW YEAR''S DAY',,new_year1s_day.mp4
-'NEW YEAR''S EVE',,new_year1s_eve.mp4
+NEW YEAR'S DAY,,new_year1s_day.mp4
+NEW YEAR'S EVE,,new_year1s_eve.mp4
 NEW YORK,(as in "the state"),new_york.mp4
 NEW YORK CITY,(as in "the city in New York"),new_york_city.mp4
 NEWFOUNDLAND,(as in "the Canadian province of Newfoundland and Labrador"),newfoundland.mp4
@@ -6233,7 +6233,7 @@ NOT AFRAID,,not_afraid.mp4
 NOT APPROPRIATE,,not_appropriate.mp4
 NOT BALANCED,(as in "financially"),not_balanced.mp4
 NOT BALANCED,(as in "weight"),not_balanced2.mp4
-NOT BALANCED,|(as in "uneven distribution,_difficult_to_remain_uprigh.mp4,NOT BALANCED3.mp4
+NOT BALANCED,(as in "uneven distribution difficult to remain upright"),not_balanced3.mp4
 NOT BELIEVABLE,,not_believable.mp4
 NOT CLEAN,,not_clean.mp4
 NOT CONFIDENT,,not_confident.mp4
@@ -6384,8 +6384,8 @@ OFFENSE,(as in "to offend me"),offense2.mp4
 OFFENSE,(as in "to offend someone"),offense3.mp4
 OFFENSE,(as in "the position in sports"),offense4.mp4
 OFFER,,offer.mp4
-OFFERING,|(as in "the verb,_to_offe.mp4,OFFERING.mp4
-OFFERING,|(as in "the noun,_a_thing_off.mp4, such as a gift or contribution")|,OFFERING2.mp4
+OFFERING,(as in "the verb to offer"),offering.mp4
+OFFERING,(as in "the noun a thing offered such as a gift or contribution"),offering2.mp4
 OFFICE,,office.mp4
 OFFICER,,officer.mp4
 OFTEN,,often.mp4
@@ -6399,13 +6399,13 @@ OH MY,,oh_my.mp4
 OH MY GOSH,,oh_my_gosh.mp4
 OH NO,,oh_no.mp4
 OHIO,(as in "the state"),ohio.mp4
-OIL,|(as in "a viscous liquid used for fuel,_lubri.mp4, or cooking")|,OIL.mp4
+OIL,(as in "a viscous liquid used for fuel lubrification or cooking"),oil.mp4
 OIL,(as in "religious blessing oil"),oil2.mp4
 OILY,,oily.mp4
 OINK,(as in "the sound a pig makes"),oink.mp4
 OINTMENT,,ointment.mp4
 OK,(as in "agreeing with someone or doing good"),ok.mp4
-OK,|(as in "satisfactory,_but_not_outstanding2_just_o.mp4,OK2.mp4
+OK,(as in "satisfactory but not outstanding just ok"),ok2.mp4
 OKLAHOMA,(as in "the state"),oklahoma.mp4
 OLD,,old.mp4
 OLD FASHIONED,,old_fashioned.mp4
@@ -6510,7 +6510,7 @@ ORBIT,,orbit.mp4
 ORCHARD,,orchard.mp4
 ORCHESTRA,,orchestra.mp4
 ORDAIN,,ordain.mp4
-ORDAIN,|(as in "an ordained person,_he_is_is_ordaine.mp4,ORDAIN2.mp4
+ORDAIN,(as in "an ordained person"),ordain2.mp4
 ORDEAL,,ordeal.mp4
 ORDER,(as in "a command"),order.mp4
 ORDER,(as in "to arrange"),order2.mp4
@@ -6521,7 +6521,7 @@ ORDINARY,,ordinary.mp4
 ORDINATION,,ordination.mp4
 OREGON,(as in "the state"),oregon.mp4
 OREO,(as in "the type of cookie"),oreo.mp4
-ORGAN,|(as in "a pipe organ,_similar_to_a_pian.mp4,ORGAN.mp4
+ORGAN,(as in "a pipe organ similar to a piano"),organ.mp4
 ORGANIC,,organic.mp4
 ORGANIZATION,,organization.mp4
 ORGANIZE,,organize.mp4
@@ -6705,8 +6705,8 @@ PARK,(as in "park a vehicle"),park.mp4
 PARK,(as in "recreational public area or playground"),park2.mp4
 PARKING,,parking.mp4
 PARKING METER,,parking_meter.mp4
-PARLIAMENT,'(as in "England''s government")',parliament.mp4
-PARLIAMENT,'(as in "Canada''s government")',parliament2.mp4
+PARLIAMENT,(as in "England's government"),parliament.mp4
+PARLIAMENT,(as in "Canada's government"),parliament2.mp4
 PARLIAMENTARY,,parliamentary.mp4
 PAROLE,,parole.mp4
 PARROT,(as in "a type of bird"),parrot.mp4
@@ -6796,12 +6796,12 @@ PECAN,,pecan.mp4
 PECK,(as in "hit with a beak"),peck.mp4
 PECULIAR,,peculiar.mp4
 PEDAL,(as in "bike pedal"),pedal.mp4
-PEDAL,'(as in "a vehicle''s gas pedal")',pedal2.mp4
+PEDAL,(as in "a vehicle's gas pedal"),pedal2.mp4
 PEDAL,(as in "to pedal a bike up"),pedal3.mp4
 PEDAL,(as in "to pedal a bike over"),pedal4.mp4
 PEDAL,(as in "to pedal a bike down"),pedal5.mp4
 PEDAL,(as in "to pedal a bike under"),pedal6.mp4
-PEDAL,'(as in "a vehicle''s pedal for controlling the manual transmission")',pedal7.mp4
+PEDAL,(as in "a vehicle's pedal for controlling the manual transmission"),pedal7.mp4
 PEDDLE,,peddle.mp4
 PEDIATRICIAN,(as in "a child or baby doctor"),pediatrician.mp4
 PEDIATRICS,,pediatrics.mp4
@@ -6879,7 +6879,7 @@ PERSIST,,persist.mp4
 PERSON,(as in "an individual"),person.mp4
 PERSON,(as in "person agent"),person2.mp4
 PERSON RECOMMENDED,,person_recommended.mp4
-PERSONAL,|(as in "private,_classi.mp4, or secret")|,PERSONAL.mp4
+PERSONAL,(as in "private classified or secret"),personal.mp4
 PERSONAL,(as in "mine"),personal2.mp4
 PERSONAL,(as in "relating to myself"),personal3.mp4
 PERSONAL COMMUNICATOR,,personal_communicator.mp4
@@ -6896,8 +6896,8 @@ PEST,,pest.mp4
 PET,(as in "the action - to pet something"),pet.mp4
 PET,(as in "a domesticated animal"),pet2.mp4
 PETER,(as in "Saint Peter"),peter.mp4
-PETITE,|(as in "the size of something,_it_is_small_or_littl.mp4,PETITE.mp4
-PETITE,|(as in "height- petite,_short_or_littl.mp4,PETITE2.mp4
+PETITE,(as in "the size of something it is small or little"),petite.mp4
+PETITE,(as in "short or little"),petite2.mp4
 PETITION,(as in "appeal"),petition.mp4
 PETITION,(as in "a communion with God"),petition2.mp4
 PETITION,(as in "beg or ask "),petition3.mp4
@@ -6934,7 +6934,7 @@ PHYLLIS FRELICH,,phyllis_frelich.mp4
 PHYSICAL,,physical.mp4
 PHYSICAL EXAM,,physical_exam.mp4
 PHYSICIAN,,physician.mp4
-'PHYSICIAN''S DIRECTIVE',,physician1s_directive.mp4
+PHYSICIAN'S DIRECTIVE,,physician1s_directive.mp4
 PHYSICS,,physics.mp4
 PHYSIQUE,,physique.mp4
 PIANO,,piano.mp4
@@ -7014,7 +7014,7 @@ PLANE,(as in "jet airplane or generic airplane"),plane.mp4
 PLANE,(as in "prop airplane"),plane2.mp4
 PLANE,(as in "to flatten wood"),plane3.mp4
 PLANET,,planet.mp4
-PLANT,|(as in "the noun,_something_that_grow.mp4,PLANT.mp4
+PLANT,(as in "the noun something that grow"),plant.mp4
 PLANT,(as in "a building"),plant2.mp4
 PLANT,(as in "to plant something in the ground"),plant3.mp4
 PLANT,(as in "to plant multiple seeds in the ground"),plant4.mp4
@@ -7024,7 +7024,7 @@ PLASTIC BAG,,plastic_bag.mp4
 PLATE,,plate.mp4
 PLAUSIBLE,,plausible.mp4
 PLAY,(as in "to play a game or with something or play around"),play.mp4
-PLAY,|(as in "entertainment,_a_show_or_dram.mp4,PLAY2.mp4
+PLAY,(as in "entertainment: a show or drama"),play2.mp4
 PLAY AGAINST,,play_against.mp4
 PLAY AROUND,,play_around.mp4
 PLAY BY EAR,(as in "can play the music by ear"),play_by_ear.mp4
@@ -7168,7 +7168,7 @@ POTATO CHIPS,,potato_chips.mp4
 POTENTIAL,,potential.mp4
 POTHOLE,,pothole.mp4
 POTTY,,potty.mp4
-POUCH,'(as in "a marsupial''s pouch")',pouch.mp4
+POUCH,(as in "a marsupial's pouch"),pouch.mp4
 POUCH,(as in "a bag you carry"),pouch2.mp4
 POULTRY,,poultry.mp4
 POUND,(as in "the unit of measure"),pound.mp4
@@ -7207,7 +7207,7 @@ PREFERENCE,,preference.mp4
 PREGNANT,,pregnant.mp4
 PREJUDICE,,prejudice.mp4
 PREPARATION,,preparation.mp4
-PREPARATORY,'(as in "Gallaudet''s year before the Freshman year")',preparatory.mp4
+PREPARATORY,(as in "Gallaudet's year before the Freshman year"),preparatory.mp4
 PREPARE,,prepare.mp4
 PREPARED,,prepared.mp4
 PREPAREDNESS,,preparedness.mp4
@@ -7227,7 +7227,7 @@ PRESENTATION,,presentation.mp4
 PRESENTLY,,presently.mp4
 PRESERVE,,preserve.mp4
 PRESIDENT,,president.mp4
-'PRESIDENT''S DAY',,president1s_day.mp4
+PRESIDENT'S DAY,,president1s_day.mp4
 PRESS,,press.mp4
 PRESSURE,(as in "stress"),pressure.mp4
 PRESUMPTUOUS,,presumptuous.mp4
@@ -7518,7 +7518,7 @@ RAINDROPS,,raindrops.mp4
 RAINFOREST,,rainforest.mp4
 RAINY,,rainy.mp4
 RAISE,(as in "lift or move higher"),raise.mp4
-RAISE,|(as in "bring up,_b.mp4, or grow")|,RAISE2.mp4
+RAISE,(as in "bring up or breed or grow"),raise2.mp4
 RAISE,(as in "to have an audience stand up"),raise3.mp4
 RAISE,(as in "to stand up"),raise4.mp4
 RAISE,(as in "promotion"),raise5.mp4
@@ -7576,7 +7576,7 @@ REACH,(as in "to have a goal"),reach4.mp4
 REACT,,react.mp4
 REACTION,,reaction.mp4
 READ,,read.mp4
-READING,|(as in "the verb,_to_rea.mp4,READING.mp4
+READING,(as in "the verb to read"),reading.mp4
 READY,(as in "prepared for action"),ready.mp4
 READY,(as in "to prepare"),ready2.mp4
 READY-SET-GO,,ready2set2go.mp4
@@ -7998,7 +7998,7 @@ RULE,(as in "regulations"),rule.mp4
 RULE,(as in "govern"),rule2.mp4
 RULER,,ruler.mp4
 RUMOR,,rumor.mp4
-RUN,|(as in "moving quickly on feet,_faster_than_walkin.mp4,RUN.mp4
+RUN,(as in "moving quickly on feet faster than walking"),run.mp4
 RUN,(as in "escape"),run2.mp4
 RUN,(as in "a motor running"),run3.mp4
 RUN,(as in "running for office"),run4.mp4
@@ -8066,7 +8066,7 @@ SAINT KITTS AND NEVIS,(as in "the country"),saint_kitts_and_nevis.mp4
 SAINT LUCIA,(as in "the country"),saint_lucia.mp4
 SAINT MARTIN,(as in "the French territory"),saint_martin.mp4
 SAINT PAUL,(as in "the city"),saint_paul.mp4
-SAINT PAUL,|(as in "the person,_the_apostle_pau.mp4,SAINT PAUL2.mp4
+SAINT PAUL,(as in "the person the apostle paul"),saint_paul2.mp4
 SAINT PETER,,saint_peter.mp4
 SAINT PIERRE,(as in "part of the French territory"),saint_pierre.mp4
 SAINT PIERRE AND MIQUELON,(as in "the French territory"),saint_pierre_and_miquelon.mp4
@@ -8248,7 +8248,7 @@ SEIZE,,seize.mp4
 SELDOM,,seldom.mp4
 SELECT,,select.mp4
 SELF,,self.mp4
-SELF,|(as in "self,_but_with_emphasi.mp4,SELF2.mp4
+SELF,(as in "self but with emphasis"),self2.mp4
 SELF-ANALYZE,,self2analyze.mp4
 SELF-CENTERED,,self2centered.mp4
 SELF-DENIAL,,self2denial.mp4
@@ -8304,7 +8304,7 @@ SERVE,,serve.mp4
 SERVER,,server.mp4
 SERVICE,,service.mp4
 SET,,set.mp4
-SET,'(as in "won''t change")',set2.mp4
+SET,(as in "won't change"),set2.mp4
 SETTLE,(as in "calm down or settle down"),settle.mp4
 SETTLE DOWN,,settle_down.mp4
 SETUP,(as in "to set something down or to setup"),setup.mp4
@@ -8442,7 +8442,7 @@ SHOVE,,shove.mp4
 SHOVEL,,shovel.mp4
 SHOW,(as in "to show something"),show.mp4
 SHOW,(as in "to show someone"),show2.mp4
-SHOW,|(as in "entertainment,_a_play_or_dram.mp4,SHOW3.mp4
+SHOW,(as in "entertainment a play or drama"),show3.mp4
 SHOW,(as in "someone show me"),show4.mp4
 SHOW ALL,,show_all.mp4
 SHOW OFF,,show_off.mp4
@@ -8457,7 +8457,7 @@ SHRINK,(as in "something shrinks"),shrink.mp4
 SHRINK,(as in "Psychiatrist"),shrink2.mp4
 SHRINK,(as in "a person shrinking"),shrink3.mp4
 SHROUD,,shroud.mp4
-SHRUG,'(as in "don''t know")',shrug.mp4
+SHRUG,(as in "don''t know"),shrug.mp4
 SHUDDER,,shudder.mp4
 SHUFFLE,(as in "shuffle the cards"),shuffle.mp4
 SHUFFLE,(as in "shuffle feet"),shuffle2.mp4
@@ -8646,7 +8646,7 @@ SLUT,,slut.mp4
 SLUTTY,,slutty.mp4
 SLY,,sly.mp4
 SMACK,,smack.mp4
-SMALL,|(as in "the size of something,_it_is_small_or_littl.mp4,SMALL.mp4
+SMALL,(as in "the size of something it is small or little"),small.mp4
 SMALL TALK,,small_talk.mp4
 SMART,,smart.mp4
 SMASH,,smash.mp4
@@ -8916,7 +8916,7 @@ SQUINT,,squint.mp4
 SQUIRREL,,squirrel.mp4
 SRI LANKA,(as in "the country"),sri_lanka.mp4
 SS,(as in "the letter S twice"),ss.mp4
-'ST PATRICK''S DAY',,st_patrick1s_day.mp4
+ST PATRICK'S DAY,,st_patrick1s_day.mp4
 STAB,,stab.mp4
 STABLE,(as in "a barn"),stable.mp4
 STACEY,(as in "the name"),stacey.mp4
@@ -8947,8 +8947,8 @@ STAND UP,(as in "to stand up"),stand_up.mp4
 STAND UP,(as in "to have an audience stand up"),stand_up2.mp4
 STANDARD,,standard.mp4
 STANDARDIZED,,standardized.mp4
-STAPLE,|(as in "the object,_a_stapl.mp4,STAPLE.mp4
-STAPLE,|(as in "the action,_to_stapl.mp4,STAPLE2.mp4
+STAPLE,(as in "the object a staple"),staple.mp4
+STAPLE,(as in "the action to staple"),staple2.mp4
 STAPLER,,stapler.mp4
 STAR,(as in "a famous person"),star.mp4
 STAR,(as in "a star in the sky"),star2.mp4
@@ -9011,7 +9011,7 @@ STICKERS,,stickers.mp4
 STICKY,,sticky.mp4
 STIFF,,stiff.mp4
 STILL,(as in "currently or even now"),still.mp4
-STILL,|(as in "calm,_tran.mp4, or silent")|,STILL2.mp4
+STILL,(as in "calm tranquil or silent"),still2.mp4
 STIMULANT,(as in "substance that stimulates"),stimulant.mp4
 STIMULATE,,stimulate.mp4
 STIMULATE,(as in "to raise levels or excite"),stimulate2.mp4
@@ -9065,7 +9065,7 @@ STRANGER,(as in "a person unknown to you"),stranger.mp4
 STRANGER,(as in "more strange"),stranger2.mp4
 STRANGLE,,strangle.mp4
 STRAP,(as in "overall strap"),strap.mp4
-STRAP,|(as in "a thin strap,_like_a_spaghetti_strap_or_bra_stra.mp4,STRAP2.mp4
+STRAP,(as in "a thin strap like a spaghetti strap or bra strap"),strap2.mp4
 STRAP,(as in "a bag strap"),strap3.mp4
 STRAP,(as in "seatbelt strap"),strap4.mp4
 STRATEGY,,strategy.mp4
@@ -9128,7 +9128,7 @@ SUBSTITUTE,(as in "to trade or exchange"),substitute.mp4
 SUBSTITUTE TEACHER,(as in "temporary teacher"),substitute_teacher.mp4
 SUBSTITUTION,(as in "to use in place of"),substitution.mp4
 SUBTRACT,(as in "deduct an amount"),subtract.mp4
-SUBTRACT,|(as in "the math symbol for subtract,_.mp4,SUBTRACT2.mp4
+SUBTRACT,(as in "the math symbol for subtract -"),subtract2.mp4
 SUBWAY,,subway.mp4
 SUCCEED,,succeed.mp4
 SUCCESS,,success.mp4
@@ -9254,13 +9254,13 @@ SWIM SHORTS,,swim_shorts.mp4
 SWIM TRUNKS,,swim_trunks.mp4
 SWIMMER,,swimmer.mp4
 SWIMMING,,swimming.mp4
-SWIMSUIT,'(as in "women''s one piece swimsuit")',swimsuit.mp4
-SWIMSUIT,'(as in "women''s two piece swimsuit")',swimsuit2.mp4
-SWIMSUIT,'(as in "men''s swimsuit")',swimsuit3.mp4
+SWIMSUIT,(as in "women's one piece swimsuit"),swimsuit.mp4
+SWIMSUIT,(as in "women's two piece swimsuit"),swimsuit2.mp4
+SWIMSUIT,(as in "men's swimsuit"),swimsuit3.mp4
 SWINDLE,(as in "to swindle someone"),swindle.mp4
 SWINDLE,(as in "swindle me"),swindle2.mp4
 SWINDLER,,swindler.mp4
-SWING,'(as in "a playground swing and the verb ''to swing''")',swing.mp4
+SWING,(as in "a playground swing and the verb to swing"),swing.mp4
 SWISS,,swiss.mp4
 SWITCH,(as in "to trade or replace"),switch1.mp4
 SWITCH,(as in "change"),switch2.mp4
@@ -9369,7 +9369,7 @@ TEA,,tea.mp4
 TEACH,,teach.mp4
 TEACHER,,teacher.mp4
 TEACHER AIDE,,teacher_aide.mp4
-'TEACHER''S PET',,teacher1s_pet.mp4
+TEACHER'S PET,,teacher1s_pet.mp4
 TEACHING,,teaching.mp4
 TEAM,,team.mp4
 TEAMMATE,,teammate.mp4
@@ -9408,7 +9408,7 @@ TELETYPEWRITER CALL,,teletypewriter_call.mp4
 TELEVISION,,television.mp4
 TELL,(as in "tell me"),tell.mp4
 TELL,(as in "to tell someone"),tell2.mp4
-TELL,|(as in "tell off,_repri.mp4, or scold")|,TELL3.mp4
+TELL,(as in "tell off reprimand or scold"),tell3.mp4
 TELL AGAIN,,tell_again.mp4
 TEMPER,,temper.mp4
 TEMPERAMENTAL,,temperamental.mp4
@@ -9478,15 +9478,15 @@ THANKS A LOT,,thanks_a_lot.mp4
 THANKSGIVING,,thanksgiving.mp4
 THAT,,that.mp4
 THAT SUCKS,(as in "not that great"),that_sucks.mp4
-'THAT''S ALL',,that1s_all.mp4
-'THAT''S COOL',,that1s_cool.mp4
-'THAT''S NEAT',,that1s_neat.mp4
+THAT'S ALL,,that1s_all.mp4
+THAT'S COOL,,that1s_cool.mp4
+THAT'S NEAT,,that1s_neat.mp4
 THE,,the.mp4
 THE FLASH,(as in "the super hero"),the_flash.mp4
 THE PENTAGON,,the_pentagon.mp4
 THEATER,(as in "a place where performances happen"),theater.mp4
-THEATER,|(as in "a play/show,_the_acti.mp4, subject, or profession")|,THEATER2.mp4
-THEATER,|(as in "a place for lectures,_etc.mp4,THEATER3.mp4
+THEATER,(as in "a play/show the action subject or profession"),theater2.mp4
+THEATER,(as in "a place for lectures etc"),theater3.mp4
 THEE,(as in "a reference to God"),thee.mp4
 THEFT,,theft.mp4
 THEIR,,their.mp4
@@ -9521,7 +9521,7 @@ THINK POSITIVE,,think_positive.mp4
 THINK STRONGLY,,think_strongly.mp4
 THINK THE SAME,,think_the_same.mp4
 THINKING,,thinking.mp4
-THIRD,|(as in "the amount,_1/.mp4,THIRD.mp4
+THIRD,(as in "the amount 1/3"),third.mp4
 THIRD,(as in "third place"),third2.mp4
 THIRD,(as in "in a sequence"),third3.mp4
 THIRD,(as in "third of three"),third4.mp4
@@ -9623,7 +9623,7 @@ TIMEFRAME,(as in "time limit"),timeframe.mp4
 TIMELY,,timely.mp4
 TIMES,(as in "multiply"),times.mp4
 TIMID,,timid.mp4
-TINY,|(as in "the size of something,_it_is_small_or_littl.mp4,TINY.mp4
+TINY,(as in "the size of something it is small or little"),tiny.mp4
 TINY,(as in "a quantity or amount- a tiny bit"),tiny2.mp4
 TIP,(as in "top"),tip.mp4
 TIPSY,,tipsy.mp4
@@ -9635,7 +9635,7 @@ TIRE,(as in "covering around a wheel"),tire2.mp4
 TISSUE,,tissue.mp4
 TITHE,,tithe.mp4
 TITLE,,title.mp4
-TMES,|(as in "the math symbol for multiply,_.mp4,TMES.mp4
+TMES,(as in "the math symbol for multiply x"),tmes.mp4
 TO,,to.mp4
 TO BE,,to_be.mp4
 TO DO WHAT,,to_do_what.mp4
@@ -9775,7 +9775,7 @@ TRAVERSE CITY,(as in "the city in Michigan"),traverse_city.mp4
 TRAY,,tray.mp4
 TREASURE,(as in "a valuable object"),treasure.mp4
 TREASURER,,treasurer.mp4
-TREAT,'(as in "one''s behavior towards others ")',treat.mp4
+TREAT,(as in "one's behavior towards others "),treat.mp4
 TREE,(as in "the plant"),tree.mp4
 TREE,(as in "a shoe tree"),tree2.mp4
 TREE FROG,,tree_frog.mp4
@@ -9920,7 +9920,7 @@ TWO YEARS AGO,,two_years_ago.mp4
 TWO YEARS FROM NOW,,two_years_from_now.mp4
 TWO YEARS OLD,,two_years_old.mp4
 TYPE,(as in "type on a computer"),type.mp4
-TYPE,|(as in "variety,_kin.mp4,TYPE2.mp4
+TYPE,(as in "variety kind"),type2.mp4
 TYPEWRITER,,typewriter.mp4
 TYPICAL,,typical.mp4
 TZEDAKAH,,tzedakah.mp4
@@ -9942,7 +9942,7 @@ UNAVOIDABLE,(as in "inevitable"),unavoidable.mp4
 UNAWARE,,unaware.mp4
 UNBALANCE,(as in "financial"),unbalance.mp4
 UNBALANCE,(as in "weight"),unbalance2.mp4
-UNBALANCED,|(as in "uneven distribution,_difficult_to_remain_uprigh.mp4,UNBALANCED.mp4
+UNBALANCED,(as in "uneven distribution difficult to remain upright"),unbalanced.mp4
 UNBEATEN,,unbeaten.mp4
 UNBELIEVABLE,,unbelievable.mp4
 UNBREAKABLE,(as in "cannot be broken"),unbreakable.mp4
@@ -9952,7 +9952,7 @@ UNCHANGED,,unchanged.mp4
 UNCHANGING,,unchanging.mp4
 UNCLE,,uncle.mp4
 UNCLEAN,(as in "dirty"),unclean.mp4
-UNCLEAR,|(as in "hazy,_blu.mp4, or vague")|,UNCLEAR.mp4
+UNCLEAR,(as in "hazy blurred or vague"),unclear.mp4
 UNCOMFORTABLE,(as in "not at ease"),uncomfortable.mp4
 UNCONCERNED,(as in "not worried"),unconcerned.mp4
 UNCONSCIOUS,,unconscious.mp4
@@ -9969,7 +9969,7 @@ UNDERSTAND,,understand.mp4
 UNDERTOW,(as in "rip current"),undertow.mp4
 UNDERWATER,,underwater.mp4
 UNDERWEAR,,underwear.mp4
-UNDRESS,'(as in "to take off one''s clothes")',undress.mp4
+UNDRESS,(as in "to take off one's clothes"),undress.mp4
 UNEMPLOYED,,unemployed.mp4
 UNEVEN,(as in "unfair"),uneven.mp4
 UNFAIR,,unfair.mp4
@@ -10001,7 +10001,7 @@ UNNOTICED,,unnoticed.mp4
 UNPLUG,,unplug.mp4
 UNPOLLUTED,,unpolluted.mp4
 UNREASONABLE,(as in "not based on good sense"),unreasonable.mp4
-UNRELIABLE,|(as in "fickle,_cannot_be_relied_on.mp4,UNRELIABLE.mp4
+UNRELIABLE,(as in "fickle cannot be relied on"),unreliable.mp4
 UNRULY,,unruly.mp4
 UNSHAVEN,(as in "face"),unshaven.mp4
 UNSHAVEN,(as in "legs"),unshaven2.mp4
@@ -10069,8 +10069,8 @@ VAGRANT,,vagrant.mp4
 VAGUE,,vague.mp4
 VAIN,,vain.mp4
 VALENTINE,,valentine.mp4
-'VALENTINE''S DAY',,valentine1s_day.mp4
-'VALENTINE''S GIFT',,valentine1s_gift.mp4
+VALENTINE'S DAY,,valentine1s_day.mp4
+VALENTINE'S GIFT,,valentine1s_gift.mp4
 VALID,,valid.mp4
 VALLEY,,valley.mp4
 VALUABLE,,valuable.mp4
@@ -10147,7 +10147,7 @@ VESTMENTS,,vestments.mp4
 VESTRY,(as in "holy place"),vestry.mp4
 VET,,vet.mp4
 VETERAN,,veteran.mp4
-'VETERAN''S DAY',,veteran1s_day.mp4
+VETERAN'S DAY,,veteran1s_day.mp4
 VETERINARIAN,,veterinarian.mp4
 VIA,,via.mp4
 VIBRATE,,vibrate.mp4
@@ -10189,7 +10189,7 @@ VISIBILITY,,visibility.mp4
 VISIBLE,,visible.mp4
 VISION,(as in "ability to see"),vision.mp4
 VISION,(as in "prophecy or appearance of a supernatural being"),vision2.mp4
-VISION,|(as in "the verb,_visualize_or_imagin.mp4,VISION3.mp4
+VISION,(as in "the verb visualize or imagine"),vision3.mp4
 VISIT,,visit.mp4
 VISITING,,visiting.mp4
 VISITOR,,visitor.mp4
@@ -10378,8 +10378,8 @@ WHAT THE HELL,,what_the_hell.mp4
 WHAT TIME IS IT,,what_time_is_it.mp4
 WHAT TO DO,,what_to_do.mp4
 WHAT,,what.mp4
-'WHAT''S HAPPENING',,what1s_happening.mp4
-'WHAT''S UP',(as in "to ask for an update"),what1s_up.mp4
+WHAT'S HAPPENING,,what1s_happening.mp4
+WHAT'S UP,(as in "to ask for an update"),what1s_up.mp4
 WHATEVER,,whatever.mp4
 WHEEL,,wheel.mp4
 WHEELBARROW,,wheelbarrow.mp4
@@ -10433,7 +10433,7 @@ WILLIAM,(as in "the name"),william.mp4
 WILLING,,willing.mp4
 WILT,,wilt.mp4
 WIMPY,,wimpy.mp4
-WIN,|(as in "to achieve a prize,_tr.mp4, or victory; or to achieve the first place in a competition: to win")|,WIN.mp4
+WIN,(as in "to achieve a prize or trophy or victory or to achieve the first place in a competition: to win"),win.mp4
 WIND,,wind.mp4
 WIND PIPE,(as in "esophagus"),wind_pipe.mp4
 WIND UP,(as in "to end"),wind_up.mp4
@@ -10481,10 +10481,10 @@ WOLF,,wolf.mp4
 WOLFED IT DOWN,,wolfed_it_down.mp4
 WOMAN,,woman.mp4
 WOMEN,,women.mp4
-'WOMEN''S GROUP',,women1s_group.mp4
+WOMEN'S GROUP,,women1s_group.mp4
 WON,,won.mp4
-'WON''T',,won1t.mp4
-'WON''T CHANGE',,won1t_change.mp4
+WON'T,,won1t.mp4
+WON'T CHANGE',,won1t_change.mp4
 WONDER,(as in "contemplate"),wonder.mp4
 WONDER,(as in "awe"),wonder2.mp4
 WONDERFUL,,wonderful.mp4
@@ -10508,7 +10508,7 @@ WORK ON IT,(as in "work on it a lot"),work_on_it2.mp4
 WORK OUT,,work_out.mp4
 WORKAHOLIC,,workaholic.mp4
 WORKER,,worker.mp4
-'WORKER''S COMPENSATION',,worker1s_compensation.mp4
+WORKER'S COMPENSATION,,worker1s_compensation.mp4
 WORKSHOP,,workshop.mp4
 WORLD,,world.mp4
 WORM,,worm.mp4
