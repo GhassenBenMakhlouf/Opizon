@@ -123,6 +123,7 @@
 
         <!-- Column 1 -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/app3_card"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
@@ -143,13 +144,13 @@
                 android:weightSum="5">
 
                 <ImageView
-                    android:src="@drawable/no_app"
+                    android:src="@drawable/app3"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:layout_weight="4"/>
                 <TextView
-                    android:text="Wait for it"
+                    android:text="Be Positive"
                     android:layout_gravity="center_horizontal"
                     android:textAlignment="center"
                     android:textSize="18sp"

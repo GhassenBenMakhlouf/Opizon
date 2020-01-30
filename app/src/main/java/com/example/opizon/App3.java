@@ -41,10 +41,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-
-public class App2 extends AppCompatActivity {
-
-    private static final String TAG = "AndroidCameraApi2_App2";
+public class App3 extends AppCompatActivity {
+    private static final String TAG = "AndroidCameraApi2_App3";
     private Button startButton;
     private TextureView textureView;
     private static final SparseIntArray ORIENTATIONS = new SparseIntArray();
@@ -128,7 +126,7 @@ public class App2 extends AppCompatActivity {
         @Override
         public void onCaptureCompleted(CameraCaptureSession session, CaptureRequest request, TotalCaptureResult result) {
             super.onCaptureCompleted(session, request, result);
-            Toast.makeText(App2.this, "Saved:" + file, Toast.LENGTH_SHORT).show();
+            Toast.makeText(App3.this, "Saved:" + file, Toast.LENGTH_SHORT).show();
             createCameraPreview();
         }
     };
@@ -218,8 +216,8 @@ public class App2 extends AppCompatActivity {
 
 
 
-                    Intent intent = new Intent(App2.this, QuoteActivity.class);
-                    intent.putExtra("QUOTE_MODE","emotion");
+                    Intent intent = new Intent(App3.this, QuoteActivity.class);
+//                    intent.putExtra("QUOTE_MODE","emotion");
 //                    intent.putExtra("IMAGE", bytes);
                     startActivity(intent);
 
@@ -252,10 +250,10 @@ public class App2 extends AppCompatActivity {
 //                    } catch (IOException e) {
 //                        e.printStackTrace();
 //                    } finally {
-                    if (image != null) {
-                        image.close();
+                        if (image != null) {
+                            image.close();
+                        }
                     }
-                }
 //                }
 //                private void save(byte[] bytes) throws IOException {
 //                    OutputStream output = null;
@@ -274,7 +272,7 @@ public class App2 extends AppCompatActivity {
                 @Override
                 public void onCaptureCompleted(CameraCaptureSession session, CaptureRequest request, TotalCaptureResult result) {
                     super.onCaptureCompleted(session, request, result);
-                    Toast.makeText(App2.this, "Saved:" + file, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(App3.this, "Saved:" + file, Toast.LENGTH_SHORT).show();
                     createCameraPreview();
                 }
             };
@@ -316,7 +314,7 @@ public class App2 extends AppCompatActivity {
                 }
                 @Override
                 public void onConfigureFailed(@NonNull CameraCaptureSession cameraCaptureSession) {
-                    Toast.makeText(App2.this, "Configuration change", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(App3.this, "Configuration change", Toast.LENGTH_SHORT).show();
                 }
             }, null);
         } catch (CameraAccessException e) {
@@ -328,14 +326,14 @@ public class App2 extends AppCompatActivity {
         Log.e(TAG, "is camera open");
         try {
             //1 for frontcamera , 0 for back camera
-            cameraId = manager.getCameraIdList()[1];
+            cameraId = manager.getCameraIdList()[0];
             CameraCharacteristics characteristics = manager.getCameraCharacteristics(cameraId);
             StreamConfigurationMap map = characteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
             assert map != null;
             imageDimension = map.getOutputSizes(SurfaceTexture.class)[0];
             // Add permission for camera and let user grant the permission
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(App2.this, new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CAMERA_PERMISSION);
+                ActivityCompat.requestPermissions(App3.this, new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CAMERA_PERMISSION);
                 return;
             }
             manager.openCamera(cameraId, stateCallback, null);
@@ -370,7 +368,7 @@ public class App2 extends AppCompatActivity {
         if (requestCode == REQUEST_CAMERA_PERMISSION) {
             if (grantResults[0] == PackageManager.PERMISSION_DENIED) {
                 // close the app
-                Toast.makeText(App2.this, "Sorry!!!, you can't use this app without granting permission", Toast.LENGTH_LONG).show();
+                Toast.makeText(App3.this, "Sorry!!!, you can't use this app without granting permission", Toast.LENGTH_LONG).show();
                 finish();
             }
         }

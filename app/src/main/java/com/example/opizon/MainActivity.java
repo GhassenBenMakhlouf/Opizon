@@ -8,15 +8,17 @@ import android.os.Bundle;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private CardView app1Card, app2Card;
+    private CardView app1Card, app2Card, app3Card;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         app1Card = (CardView) findViewById(R.id.app1_card);
         app2Card = (CardView) findViewById(R.id.app2_card);
+        app3Card = (CardView) findViewById(R.id.app3_card);
         app1Card.setOnClickListener(this);
         app2Card.setOnClickListener(this);
+        app3Card.setOnClickListener(this);
     }
 
     @Override
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
             case R.id.app1_card : i = new Intent(this,App1.class); startActivity(i); break;
             case R.id.app2_card : i = new Intent(this,App2.class); startActivity(i); break;
+            case R.id.app3_card : i = new Intent(this,App3.class); startActivity(i); break;
             default : break;
         }
 
