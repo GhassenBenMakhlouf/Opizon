@@ -51,6 +51,7 @@ xmlns:tools="http://schemas.android.com/tools"
             >
 
             <TextView
+                android:id="@+id/tasktxtview1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -64,6 +65,7 @@ xmlns:tools="http://schemas.android.com/tools"
                 />
 
             <TextView
+                android:id="@+id/tasktxtview2"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -77,6 +79,7 @@ xmlns:tools="http://schemas.android.com/tools"
                 />
 
             <TextView
+                android:id="@+id/tasktxtview3"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -89,6 +92,7 @@ xmlns:tools="http://schemas.android.com/tools"
                 android:layout_column="2"
                 />
             <TextView
+                android:id="@+id/tasktxtview4"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -101,6 +105,7 @@ xmlns:tools="http://schemas.android.com/tools"
                 android:layout_column="3"
                 />
             <TextView
+                android:id="@+id/tasktxtview5"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -123,6 +128,7 @@ xmlns:tools="http://schemas.android.com/tools"
             >
 
             <TextView
+                android:id="@+id/resulttxtview1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -134,6 +140,7 @@ xmlns:tools="http://schemas.android.com/tools"
                 />
 
             <TextView
+                android:id="@+id/resulttxtview2"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -145,6 +152,7 @@ xmlns:tools="http://schemas.android.com/tools"
                 />
 
             <TextView
+                android:id="@+id/resulttxtview3"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -154,6 +162,7 @@ xmlns:tools="http://schemas.android.com/tools"
                 android:gravity="center"
                 android:layout_column="2" />
             <TextView
+                android:id="@+id/resulttxtview4"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -163,6 +172,7 @@ xmlns:tools="http://schemas.android.com/tools"
                 android:gravity="center"
                 android:layout_column="3" />
             <TextView
+                android:id="@+id/resulttxtview5"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceLarge"
