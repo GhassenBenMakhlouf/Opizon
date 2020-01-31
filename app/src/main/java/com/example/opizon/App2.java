@@ -23,6 +23,7 @@ import android.media.Image;
 import android.media.ImageReader;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.util.Log;
@@ -33,6 +34,7 @@ import android.view.TextureView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -66,6 +68,7 @@ public class App2 extends AppCompatActivity {
     private static final String TAG = "AndroidCameraApi2_App2";
     private Button startButton;
     private TextureView textureView;
+    private TextView circleTv;
     private static final SparseIntArray ORIENTATIONS = new SparseIntArray();
     static {
         ORIENTATIONS.append(Surface.ROTATION_0, 90);
@@ -92,7 +95,11 @@ public class App2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_app3);
+
+        detectionProgressDialog = new ProgressDialog(this);
+
+        setContentView(R.layout.activity_app2);
+        circleTv = (TextView) findViewById(R.id.circle_tv);
         textureView = (TextureView) findViewById(R.id.texture);
         assert textureView != null;
         textureView.setSurfaceTextureListener(textureListener);
@@ -101,7 +108,26 @@ public class App2 extends AppCompatActivity {
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                takePicture();
+                taskNumber=0;
+
+                new CountDownTimer(25000, 1000){
+                    @Override
+                    public void onTick(long millisUntilFinished){
+                        circleTv.setText(String.valueOf((millisUntilFinished/1000)%5));
+                        Log.i("app2", "counter: "+millisUntilFinished/1000);
+                        if ((millisUntilFinished/1000)%5==0){
+                            takePicture();
+                            Log.i("app2", "picture took!");
+                        }
+                    }
+                    @Override
+                    public void onFinish() {
+                    }
+                }.start();
+
+
+
+
             }
         });
     }
@@ -234,18 +260,6 @@ public class App2 extends AppCompatActivity {
                         image.close();
                     }
                 }
-//                }
-//                private void save(byte[] bytes) throws IOException {
-//                    OutputStream output = null;
-//                    try {
-//                        output = new FileOutputStream(file);
-//                        output.write(bytes);
-//                    } finally {
-//                        if (null != output) {
-//                            output.close();
-//                        }
-//                    }
-//                }
             };
             reader.setOnImageAvailableListener(readerListener, mBackgroundHandler);
             final CameraCaptureSession.CaptureCallback captureListener = new CameraCaptureSession.CaptureCallback() {
@@ -377,7 +391,8 @@ public class App2 extends AppCompatActivity {
     //|         AZURE FACE API             |
     //<------------------------------------>
 
-    private String detectedEmotion;
+    private String[] detectedEmotion= new String[5];
+    private int taskNumber;
 
     private final String subscriptionKey = BuildConfig.FACE_SUBSCRIPTION_KEY;
 
@@ -427,19 +442,19 @@ public class App2 extends AppCompatActivity {
                     @Override
                     protected void onPreExecute() {
                         //TODO: show progress dialog
-                        detectionProgressDialog.show();
+                        //detectionProgressDialog.show();
                     }
 
                     @Override
                     protected void onProgressUpdate(String... progress) {
                         //TODO: update progress
-                        detectionProgressDialog.setMessage(progress[0]);
+                        //detectionProgressDialog.setMessage(progress[0]);
                     }
 
                     @Override
                     protected void onPostExecute(Face[] result) {
                         //TODO: update face frames
-                        detectionProgressDialog.dismiss();
+                        //detectionProgressDialog.dismiss();
 
                         if (!exceptionMessage.equals("")) {
                             showError(exceptionMessage);
@@ -448,7 +463,10 @@ public class App2 extends AppCompatActivity {
 
                         imageBitmap.recycle();
 
-                        detectedEmotion = getEmotionFromFace(result);
+                        detectedEmotion[taskNumber] = getEmotionFromFace(result);
+                        Log.i("app2", "result "+taskNumber+":  "+detectedEmotion[taskNumber]);
+                        taskNumber++;
+
                     }
                 };
 

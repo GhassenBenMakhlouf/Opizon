@@ -2,6 +2,19 @@
     <string name="app_name">Opizon</string>
     <string name="close_btn">X</string>
     <string name="swipe_right_btn">&gt;</string>
-    <string name="swipe_left_btn"> &lt; </string>
+    <string name="swipe_left_btn">&lt;</string>
+
+    <string name="happiness">Happy &#128516;</string>
+    <string name="neutral">neutral &#128528;</string>
+    <string name="disgust">disgusted &#129326;</string>
+    <string name="sadness">sad &#9785;</string>
+    <string name="surprise">surprised &#128558;</string>
+    <string name="fear">feared &#128552;</string>
+    <string name="anger">angry &#128552;</string>
+
+    <string name="check">&#9989;</string>
+    <string name="cross">&#10062;</string>
+    <string name="wait">&#9203;</string>
+
 
 </resources>
