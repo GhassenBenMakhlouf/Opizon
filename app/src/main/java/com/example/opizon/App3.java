@@ -219,7 +219,7 @@ public class App3 extends AppCompatActivity {
                     Intent intent = new Intent(App3.this, QuoteActivity.class);
                     intent.putExtra("QUOTE_MODE","emotion");
 //                    intent.putExtra("IMAGE", bytes);
-                    startActivity(intent);
+                      startActivity(intent);
 
 
 //                        runOnUiThread(new Runnable() {

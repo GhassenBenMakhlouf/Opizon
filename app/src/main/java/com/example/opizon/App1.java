@@ -125,6 +125,7 @@ public class App1 extends AppCompatActivity {
             }
 
             if (i==1){
+                Log.i("app1", tokens[0]);
                 db.put(tokens[0],new String[]{tokens[1],tokens[2]});
             }
             else{
