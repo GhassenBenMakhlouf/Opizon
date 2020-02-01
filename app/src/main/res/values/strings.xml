@@ -3,5 +3,7 @@
     <string name="close_btn">X</string>
     <string name="swipe_right_btn">&gt;</string>
     <string name="swipe_left_btn"> &lt; </string>
+    <string name="save_quote">Save</string>
+    <string name="share_quote">Share</string>
 
 </resources>

@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
             case R.id.app1_card : i = new Intent(this,App1.class); startActivity(i); break;
             case R.id.app2_card : i = new Intent(this,App2.class); startActivity(i); break;
-            case R.id.app3_card : i = new Intent(this,App3.class); startActivity(i); break;
+            case R.id.app3_card : i = new Intent(this,App3ModeActivity.class); startActivity(i); break;
             default : break;
         }
 

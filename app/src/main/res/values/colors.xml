@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
+    <!-- Theme colors -->
+    <color name="colorPrimary">#34495e</color>
+<!--    <color name="colorPrimaryVariant">#2c3e50</color>-->
+<!--    <color name="colorOnPrimary">#ecf0f1</color>-->
+<!--    <color name="colorSecondary">#95a5a6</color>-->
+<!--    <color name="colorSecondaryVariant">#bdc3c7</color>-->
+<!--    <color name="colorOnSecondary">#2ecc71</color>-->
+    <color name="colorAccent">#8e44ad</color>
+
     <color name="colorPrimaryDark">#2f333f</color>
     <color name="bluelight">#49acd5</color>
     <color name="orange">#eaad43</color>
     <color name="green">#45bc62</color>
     <color name="white">#fff</color>
-    <color name="colorAccent">#D81B60</color>
+
+    <!-- Additional colors -->
+<!--    <color name="colorOnBackground">#2c3e50</color>-->
+    <color name="colorSurface">#F5F5F5</color>
+<!--    <color name="colorOnSurface">#546E7A</color>-->
+<!--    <color name="colorError">#e53935</color>-->
+<!--    <color name="colorOnError">#ffcdd2</color>-->
+
+<!--    &lt;!&ndash; Status bar color (even if colorPrimaryVariant is set) &ndash;&gt;-->
+<!--    <color name="colorPrimaryDark">#2c3e50</color>-->
 </resources>

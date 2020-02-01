@@ -217,7 +217,7 @@ public class App3 extends AppCompatActivity {
 
 
                     Intent intent = new Intent(App3.this, QuoteActivity.class);
-//                    intent.putExtra("QUOTE_MODE","emotion");
+                    intent.putExtra("QUOTE_MODE","emotion");
 //                    intent.putExtra("IMAGE", bytes);
                     startActivity(intent);
 
@@ -326,7 +326,7 @@ public class App3 extends AppCompatActivity {
         Log.e(TAG, "is camera open");
         try {
             //1 for frontcamera , 0 for back camera
-            cameraId = manager.getCameraIdList()[0];
+            cameraId = manager.getCameraIdList()[1];
             CameraCharacteristics characteristics = manager.getCameraCharacteristics(cameraId);
             StreamConfigurationMap map = characteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
             assert map != null;
