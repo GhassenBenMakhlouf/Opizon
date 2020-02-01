@@ -23,6 +23,7 @@ import android.media.Image;
 import android.media.ImageReader;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.util.Log;
@@ -33,6 +34,7 @@ import android.view.TextureView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -66,6 +68,11 @@ public class App2 extends AppCompatActivity {
     private static final String TAG = "AndroidCameraApi2_App2";
     private Button startButton;
     private TextureView textureView;
+    private TextView circleTv;
+    private TextView[] taskTxtViews = new TextView[5];
+    private TextView[] resultTxtViews = new TextView[5];
+    Map<String, String> equivalentEmotions = new HashMap<String, String>();
+    private String[] possibleEmotions = {"happiness","neutral","disgust","sadness","surprise","fear","anger"};
     private static final SparseIntArray ORIENTATIONS = new SparseIntArray();
     static {
         ORIENTATIONS.append(Surface.ROTATION_0, 90);
@@ -92,7 +99,28 @@ public class App2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_app3);
+
+        detectionProgressDialog = new ProgressDialog(this);
+
+        setContentView(R.layout.activity_app2);
+        circleTv = (TextView) findViewById(R.id.circle_tv);
+        taskTxtViews[0] = (TextView) findViewById(R.id.tasktxtview1);
+        taskTxtViews[1] = (TextView) findViewById(R.id.tasktxtview2);
+        taskTxtViews[2] = (TextView) findViewById(R.id.tasktxtview3);
+        taskTxtViews[3] = (TextView) findViewById(R.id.tasktxtview4);
+        taskTxtViews[4] = (TextView) findViewById(R.id.tasktxtview5);
+        resultTxtViews[0] = (TextView) findViewById(R.id.resulttxtview1);
+        resultTxtViews[1] = (TextView) findViewById(R.id.resulttxtview2);
+        resultTxtViews[2] = (TextView) findViewById(R.id.resulttxtview3);
+        resultTxtViews[3] = (TextView) findViewById(R.id.resulttxtview4);
+        resultTxtViews[4] = (TextView) findViewById(R.id.resulttxtview5);
+        equivalentEmotions.put("happiness",getResources().getString(R.string.happiness));
+        equivalentEmotions.put("neutral",getResources().getString(R.string.neutral));
+        equivalentEmotions.put("disgust",getResources().getString(R.string.disgust));
+        equivalentEmotions.put("sadness",getResources().getString(R.string.sadness));
+        equivalentEmotions.put("surprise",getResources().getString(R.string.surprise));
+        equivalentEmotions.put("fear",getResources().getString(R.string.fear));
+        equivalentEmotions.put("anger",getResources().getString(R.string.anger));
         textureView = (TextureView) findViewById(R.id.texture);
         assert textureView != null;
         textureView.setSurfaceTextureListener(textureListener);
@@ -101,10 +129,56 @@ public class App2 extends AppCompatActivity {
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                takePicture();
+                taskNumber=0;
+                updateTable();
+                initializeEmotionsArrays();
+
+                new CountDownTimer(25000, 1000){
+                    @Override
+                    public void onTick(long millisUntilFinished){
+                        circleTv.setText(String.valueOf((millisUntilFinished/1000)%5));
+                        Log.i("app2", "counter: "+millisUntilFinished/1000);
+                        updateTable();
+                        if ((millisUntilFinished/1000)%5==0){
+                            takePicture();
+                            Log.i("app2", "picture took!");
+                        }
+                    }
+                    @Override
+                    public void onFinish() {
+                    }
+                }.start();
             }
         });
     }
+
+    private void initializeEmotionsArrays() {
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        for (int i=0; i<7; i++) {
+            list.add(new Integer(i));
+        }
+        Collections.shuffle(list);
+        for (int i=0; i<5; i++) {
+            expectedEmotion[i]=possibleEmotions[list.get(i)];
+            taskTxtViews[i].setText(equivalentEmotions.get(expectedEmotion[i]));
+            detectedEmotion[i]="empty";
+        }
+    }
+
+    private void updateTable() {
+        for (int i=0; i<5;i++){
+            if (expectedEmotion[i]==detectedEmotion[i]){
+                resultTxtViews[i].setText(getResources().getString(R.string.check));
+            }
+            else if(taskNumber>i) {
+                resultTxtViews[i].setText(getResources().getString(R.string.cross));
+            }
+            else{
+                resultTxtViews[i].setText(getResources().getString(R.string.wait));
+            }
+        }
+    }
+
 
 
     TextureView.SurfaceTextureListener textureListener = new TextureView.SurfaceTextureListener() {
@@ -234,18 +308,6 @@ public class App2 extends AppCompatActivity {
                         image.close();
                     }
                 }
-//                }
-//                private void save(byte[] bytes) throws IOException {
-//                    OutputStream output = null;
-//                    try {
-//                        output = new FileOutputStream(file);
-//                        output.write(bytes);
-//                    } finally {
-//                        if (null != output) {
-//                            output.close();
-//                        }
-//                    }
-//                }
             };
             reader.setOnImageAvailableListener(readerListener, mBackgroundHandler);
             final CameraCaptureSession.CaptureCallback captureListener = new CameraCaptureSession.CaptureCallback() {
@@ -377,7 +439,9 @@ public class App2 extends AppCompatActivity {
     //|         AZURE FACE API             |
     //<------------------------------------>
 
-    private String detectedEmotion;
+    private String[] detectedEmotion= new String[5];
+    private String[] expectedEmotion= new String[5];
+    private int taskNumber;
 
     private final String subscriptionKey = BuildConfig.FACE_SUBSCRIPTION_KEY;
 
@@ -427,19 +491,19 @@ public class App2 extends AppCompatActivity {
                     @Override
                     protected void onPreExecute() {
                         //TODO: show progress dialog
-                        detectionProgressDialog.show();
+                        //detectionProgressDialog.show();
                     }
 
                     @Override
                     protected void onProgressUpdate(String... progress) {
                         //TODO: update progress
-                        detectionProgressDialog.setMessage(progress[0]);
+                        //detectionProgressDialog.setMessage(progress[0]);
                     }
 
                     @Override
                     protected void onPostExecute(Face[] result) {
                         //TODO: update face frames
-                        detectionProgressDialog.dismiss();
+                        //detectionProgressDialog.dismiss();
 
                         if (!exceptionMessage.equals("")) {
                             showError(exceptionMessage);
@@ -448,7 +512,11 @@ public class App2 extends AppCompatActivity {
 
                         imageBitmap.recycle();
 
-                        detectedEmotion = getEmotionFromFace(result);
+                        detectedEmotion[taskNumber] = getEmotionFromFace(result);
+                        Log.i("app2", "expected "+taskNumber+":  "+expectedEmotion[taskNumber]);
+                        Log.i("app2", "result "+taskNumber+":  "+detectedEmotion[taskNumber]);
+                        taskNumber++;
+                        if (taskNumber==5){updateTable();}
                     }
                 };
 
