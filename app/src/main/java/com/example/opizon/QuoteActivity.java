@@ -11,7 +11,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -21,7 +20,6 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.provider.MediaStore;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
@@ -29,12 +27,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.common.collect.ListMultimap;
 import com.microsoft.projectoxford.face.FaceServiceClient;
 import com.microsoft.projectoxford.face.FaceServiceRestClient;
+import com.microsoft.projectoxford.face.contract.Accessory;
 import com.microsoft.projectoxford.face.contract.Face;
 
 import java.io.BufferedReader;
@@ -48,6 +48,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
@@ -56,6 +57,11 @@ import java.util.Map;
 import java.util.Random;
 
 import com.google.common.collect.ArrayListMultimap;
+import com.microsoft.projectoxford.face.contract.FacialHair;
+import com.microsoft.projectoxford.face.contract.Glasses;
+import com.microsoft.projectoxford.face.contract.Hair;
+import com.microsoft.projectoxford.face.contract.HeadPose;
+import com.microsoft.projectoxford.face.contract.Makeup;
 
 import static com.example.opizon.BitmapUtils.blur;
 import static com.example.opizon.BitmapUtils.darkenBitMap;
@@ -66,11 +72,11 @@ public class QuoteActivity extends AppCompatActivity {
 
     String quoteMode;
 
-    public void setEmotion(String emotion) {
-        this.emotion = emotion;
+    public void setAttributeDetected(String attributeDetected) {
+        this.attributeDetected = attributeDetected;
     }
 
-    String emotion;
+    String attributeDetected;
 
     private ListMultimap<String, String[]> dbMap = ArrayListMultimap.create();
 
@@ -99,15 +105,15 @@ public class QuoteActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
-
         quoteMode = extras.getString("QUOTE_MODE");
+
         try {
-            readDatabase(quoteMode);
+            readDatabase();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        emotion = "";
+        attributeDetected = "";
 
         //recover the image from saved static bitmap
         final Bitmap bitmapImage = Global.cachedBitmap;
@@ -167,18 +173,29 @@ public class QuoteActivity extends AppCompatActivity {
         });
     }
 
-    private void readDatabase(String quoteMode) throws IOException {
+    private void readDatabase() throws IOException {
         InputStream inputStream;
         switch (quoteMode) {
             case "emotion":
                 inputStream = getResources().openRawResource(R.raw.db_emotion);
                 break;
-            case "":
-                inputStream = null;
+            case "faceage":
+                inputStream = getResources().openRawResource(R.raw.db_faceage);
+                break;
+            case "hair":
+                inputStream = getResources().openRawResource(R.raw.db_hair);
+                break;
+            case "makeup":
+                inputStream = getResources().openRawResource(R.raw.db_makeup);
+                break;
+            case "headpose":
+                inputStream = getResources().openRawResource(R.raw.db_headpose);
+                break;
+            case "accessories":
+                inputStream = getResources().openRawResource(R.raw.db_accessories);
                 break;
             default:
-                inputStream = null;
-                break;
+                throw new UnsupportedOperationException();
         }
 
         BufferedReader reader = new BufferedReader(
@@ -284,13 +301,14 @@ public class QuoteActivity extends AppCompatActivity {
                     protected Face[] doInBackground(InputStream... params) {
                         try {
                             publishProgress("Creating your Quote...");
+
+                            FaceServiceClient.FaceAttributeType[] fatArray = getNeededAttributes();
                             Face[] result = faceServiceClient.detect(
                                     params[0],
                                     false,         // returnFaceId
                                     false,        // returnFaceLandmarks
                                     // returnFaceAttributes:
-                                    new FaceServiceClient.FaceAttributeType[]{
-                                            FaceServiceClient.FaceAttributeType.Emotion}
+                                    fatArray
                             );
                             if (result == null) {
                                 publishProgress(
@@ -331,6 +349,7 @@ public class QuoteActivity extends AppCompatActivity {
                         if (result == null) return;
 
                         ImageView imageView = findViewById(R.id.quoteView);
+
                         //draw quote on image
                         Bitmap newBitmap = drawQuoteOnBitmap(imageBitmap, result);
                         imageView.setImageBitmap(newBitmap);
@@ -361,6 +380,45 @@ public class QuoteActivity extends AppCompatActivity {
                     }
                 })
                 .create().show();
+    }
+
+    private FaceServiceClient.FaceAttributeType[] getNeededAttributes() {
+        FaceServiceClient.FaceAttributeType[] fatArray;
+
+        switch (quoteMode) {
+            case "emotion":
+                fatArray = new FaceServiceClient.FaceAttributeType[]{
+                        FaceServiceClient.FaceAttributeType.Emotion};
+                break;
+            case "faceage":
+                fatArray = new FaceServiceClient.FaceAttributeType[]{
+                        FaceServiceClient.FaceAttributeType.Age};
+                break;
+            case "hair":
+                fatArray = new FaceServiceClient.FaceAttributeType[]{
+                        FaceServiceClient.FaceAttributeType.Hair,
+                        FaceServiceClient.FaceAttributeType.FacialHair,
+                        FaceServiceClient.FaceAttributeType.Gender};
+                break;
+            case "makeup":
+                fatArray = new FaceServiceClient.FaceAttributeType[]{
+                        FaceServiceClient.FaceAttributeType.Makeup,
+                        FaceServiceClient.FaceAttributeType.Gender};
+                break;
+            case "headpose":
+                fatArray = new FaceServiceClient.FaceAttributeType[]{
+                        FaceServiceClient.FaceAttributeType.HeadPose};
+                break;
+            case "accessories":
+                fatArray = new FaceServiceClient.FaceAttributeType[]{
+                        FaceServiceClient.FaceAttributeType.Accessories,
+                        FaceServiceClient.FaceAttributeType.Glasses};
+                break;
+            default:
+                fatArray = new FaceServiceClient.FaceAttributeType[]{};
+                break;
+        }
+        return fatArray;
     }
 
     private Bitmap drawQuoteOnBitmap(final Bitmap originalBitmap, Face[] faces) {
@@ -420,30 +478,181 @@ public class QuoteActivity extends AppCompatActivity {
     private String[] getQuote(Face[] faces) {
 //        if (faces.length <= 1) {
             for (Face face : faces) {
-                Map<String, Double> emoMap = new HashMap<>();
-                emoMap.put("anger", face.faceAttributes.emotion.anger);
-                emoMap.put("contempt", face.faceAttributes.emotion.contempt);
-                emoMap.put("disgust", face.faceAttributes.emotion.disgust);
-                emoMap.put("fear", face.faceAttributes.emotion.fear);
-                emoMap.put("happiness", face.faceAttributes.emotion.happiness);
-                emoMap.put("neutral", face.faceAttributes.emotion.neutral);
-                emoMap.put("sadness", face.faceAttributes.emotion.sadness);
-                emoMap.put("surprise", face.faceAttributes.emotion.surprise);
 
-                Double maxValueInMap = Collections.max(emoMap.values());
-                String emotion = new String();
-                for (Map.Entry<String, Double> entry : emoMap.entrySet()) {
-                    if (entry.getValue() == maxValueInMap) {
-                        emotion = entry.getKey();
+                switch (quoteMode) {
+
+                    //FIRST MODE
+                    case "emotion":
+                        Map<String, Double> emoMap = new HashMap<>();
+                        emoMap.put("anger", face.faceAttributes.emotion.anger);
+                        emoMap.put("contempt", face.faceAttributes.emotion.contempt);
+                        emoMap.put("disgust", face.faceAttributes.emotion.disgust);
+                        emoMap.put("fear", face.faceAttributes.emotion.fear);
+                        emoMap.put("happiness", face.faceAttributes.emotion.happiness);
+                        emoMap.put("neutral", face.faceAttributes.emotion.neutral);
+                        emoMap.put("sadness", face.faceAttributes.emotion.sadness);
+                        emoMap.put("surprise", face.faceAttributes.emotion.surprise);
+
+                        Double maxValueInMap = Collections.max(emoMap.values());
+                        String emotionDetected = new String();
+                        for (Map.Entry<String, Double> entry : emoMap.entrySet()) {
+                            if (entry.getValue() == maxValueInMap) {
+                                emotionDetected = entry.getKey();
+                                break;
+                            }
+                        }
+
+                        //save Emotion
+                        setAttributeDetected(emotionDetected);
                         break;
-                    }
+                        //SECOND MODE
+                    case "faceage":
+
+                        double age = face.faceAttributes.age;
+                        if (age <= 12) {
+                            setAttributeDetected("kid");
+                        } else if (age <= 18) {
+                            setAttributeDetected("teenager");
+                        } else if (age <= 35) {
+                            setAttributeDetected("youngadult");
+                        } else if (age <= 64) {
+                            setAttributeDetected("adult");
+                        } else {setAttributeDetected("elderly");}
+                        break;
+                    case "hair":
+                        String gender = face.faceAttributes.gender;
+                        FacialHair facialHair = face.faceAttributes.facialHair;
+                        Hair hair = face.faceAttributes.hair;
+
+                        List<String> possibleAttributes = new ArrayList<>();
+                        if (gender=="male") {
+                            if (facialHair.beard >= 0.75) {possibleAttributes.add("beard");}
+                            if (facialHair.moustache >= 0.75) {possibleAttributes.add("moustache");}
+                        }
+
+                        if (hair.invisible) {
+                            possibleAttributes.add("invisible");
+                        } else if (hair.bald >= 0.75) {
+                            possibleAttributes.add("bald");
+                        } else {
+                            Map<String, Double> hairColourMap = new HashMap<>();
+                            for (int i=1; i<=hair.hairColor.length;i++) {
+                                hairColourMap.put(hair.hairColor[i-1].color.name().toLowerCase(), hair.hairColor[i-1].confidence);
+//                                Log.i("COLORS", hair.hairColor[i-1].color.name());
+                            }
+
+                            //get the hair color
+                            Double maxValueInMap2 = Collections.max(hairColourMap.values());
+                            String colourDetected = new String();
+                            for (Map.Entry<String, Double> entry : hairColourMap.entrySet()) {
+                                if (entry.getValue() == maxValueInMap2) {
+                                    colourDetected = entry.getKey();
+                                    break;
+                                }
+                            }
+                            possibleAttributes.add(colourDetected);
+                        }
+
+                        //select one from the possible attributes
+                        Random randHair = new Random();
+                        setAttributeDetected(possibleAttributes.get(randHair.nextInt(possibleAttributes.size())));
+                        break;
+
+                    case "makeup":
+
+                        String genderMakeUp = face.faceAttributes.gender;
+                        Makeup makeUp = face.faceAttributes.makeup;
+
+
+                        List<String> possibleAttributesMakeUp = new ArrayList<>();
+                        if (genderMakeUp=="male") {
+                            if (makeUp.eyeMakeup && makeUp.lipMakeup) {
+                                possibleAttributesMakeUp.add("male_both");}
+                            else if (makeUp.eyeMakeup) {
+                                possibleAttributesMakeUp.add("male_eye");}
+                            else if (makeUp.lipMakeup) {
+                                possibleAttributesMakeUp.add("male_lip");}
+                            else {possibleAttributesMakeUp.add("male_no");}
+                        } else if (makeUp.eyeMakeup && makeUp.lipMakeup) {
+                            possibleAttributesMakeUp.add("female_both");}
+                        else if (makeUp.eyeMakeup) {
+                            possibleAttributesMakeUp.add("female_eye");}
+                        else if (makeUp.lipMakeup) {
+                            possibleAttributesMakeUp.add("female_lip");}
+                        else {possibleAttributesMakeUp.add("female_no");}
+
+                        setAttributeDetected(possibleAttributesMakeUp.get(0));
+                        break;
+
+                    case "headpose":
+
+                        HeadPose headPose = face.faceAttributes.headPose;
+
+                        List<String> possibleAttributesHeadpose = new ArrayList<>();
+                        if (headPose.yaw>=10) {
+                            possibleAttributesHeadpose.add("look_left");
+                        } else if (headPose.yaw <= -10) {
+                            possibleAttributesHeadpose.add("look_right");
+                        }
+
+                        if (headPose.pitch>=8) {
+                            possibleAttributesHeadpose.add("look_up");
+                        } else if (headPose.pitch <= -8) {
+                            possibleAttributesHeadpose.add("look_down");
+                        }
+
+                        if (headPose.roll>=15) {
+                            possibleAttributesHeadpose.add("lean_left");
+                        } else if (headPose.roll <= -15) {
+                            possibleAttributesHeadpose.add("lean_right");
+                        }
+
+                        if (possibleAttributesHeadpose.size()==0) {
+                            possibleAttributesHeadpose.add("straight");
+                        }
+
+                        //select one from the possible attributes
+                        Random randHeadpose = new Random();
+                        setAttributeDetected(possibleAttributesHeadpose.get(randHeadpose.nextInt(possibleAttributesHeadpose.size())));
+
+                        break;
+                    case "accessories":
+
+                        Accessory[] accessories = face.faceAttributes.accessories;
+                        Glasses glasses = face.faceAttributes.glasses;
+
+                        List<String> possibleAttributesAccessories = new ArrayList<>();
+
+
+
+                        if (accessories.length==0) {
+                            possibleAttributesAccessories.add("no_acc");
+                        } else {
+                            for (int i=1; i<=accessories.length;i++) {
+                                if (accessories[i-1].confidence>=0.8) {
+                                    if (accessories[i-1].type==Accessory.AccessoryType.Glasses){
+                                        possibleAttributesAccessories.add(glasses.name().toLowerCase());
+                                    } else {
+                                        possibleAttributesAccessories.add(accessories[i-1].type.name().toLowerCase());
+                                    }
+                                }
+                            }
+                        }
+                        //select one from the possible attributes
+                        Random randAccessory = new Random();
+                        setAttributeDetected(possibleAttributesAccessories.get(randAccessory.nextInt(possibleAttributesAccessories.size())));
+
+                        break;
+                    default:
+
+                        break;
                 }
 
-                //sace Emotion
-                setEmotion(emotion);
 
                 //get random quote
-                List<String[]> quoteList = dbMap.get(emotion);
+                List<String[]> quoteList = dbMap.get(attributeDetected);
+                if (quoteList.size()==0) {
+                    return new String[]{"Detection failed","Confused Devs"}; }
 
                 Random rand = new Random();
                 return quoteList.get(rand.nextInt(quoteList.size()));
@@ -451,14 +660,14 @@ public class QuoteActivity extends AppCompatActivity {
 //        } else {
 //            return new String[]{"Cherish those you have in your life, but for this App mode to work you need to be alone in the picture.", "App Developers"};
 //        }
-        return null;
+        return new String[]{"No Face Detected","Confused Devs"};
     }
 
     private void drawTextOnCard(TextView cardTitleView, TextView cardSubtitleView){
         switch (quoteMode) {
             case "emotion":
                 cardTitleView.setText("Emotion Mode");
-                switch (emotion) {
+                switch (attributeDetected) {
                     case "anger":
                         cardSubtitleView.setText("You look angry today !");
                         break;
@@ -475,7 +684,7 @@ public class QuoteActivity extends AppCompatActivity {
                         cardSubtitleView.setText("You seem to be happy today ! Nice !");
                         break;
                     case "neutral":
-                        cardSubtitleView.setText("Your face doesn't show any emotion ! ");
+                        cardSubtitleView.setText("Your face doesn't show any attributeDetected ! ");
                         break;
                     case "sadness":
                         cardSubtitleView.setText("Stop being sad and be awesome instead !");
@@ -488,7 +697,141 @@ public class QuoteActivity extends AppCompatActivity {
                         break;
                 }
                 break;
-            case "":
+
+            case "faceage":
+                cardTitleView.setText("Face Age Mode");
+                switch (attributeDetected) {
+                    case "kid":
+                        cardSubtitleView.setText("You look like you're a kid (age lower than or equal to 12)");
+                        break;
+                    case "teenager":
+                        cardSubtitleView.setText("You look like you're a teenager (age between 13 and 18)");
+                        break;
+                    case "youngadult":
+                        cardSubtitleView.setText("You look like you're a young adult (age between 19 and 35)");
+                        break;
+                    case "adult":
+                        cardSubtitleView.setText("You look like you're an adult (age between 36 and 64)");
+                        break;
+                    case "elderly":
+                        cardSubtitleView.setText("You look like you're a teenager (age higher than or equal to 65)");
+                        break;
+                    default:
+                        cardSubtitleView.setText("FACEAGE==NULL");
+                        break;}
+
+                break;
+            case "hair":
+                cardTitleView.setText("Hair Mode");
+                switch (attributeDetected) {
+                    case "beard":
+                        cardSubtitleView.setText("You really have a nice beard !");
+                        break;
+                    case "moustache":
+                        cardSubtitleView.setText("You really have a nice moustache !");
+                        break;
+                    case "invisible":
+                        cardSubtitleView.setText("Don't hide your hair !");
+                        break;
+                    case "bald":
+                        cardSubtitleView.setText("Your baldness is really special !");
+                        break;
+                    case "other":
+                    case "unknown":
+                        cardSubtitleView.setText("What colour is your hair ?");
+                        break;
+                    case "black":
+                    case "blond":
+                    case "brown":
+                    case "gray":
+                    case "red":
+                    case "white":
+                        cardSubtitleView.setText("You have a really nice "+attributeDetected+" hair !");
+                        break;
+                    default:
+                        cardSubtitleView.setText("HAIR==NULL");
+                        break;}
+                break;
+            case "makeup":
+                cardTitleView.setText("Makeup Mode");
+                switch (attributeDetected) {
+                    case "female_both":
+                    case "male_both":
+                        cardSubtitleView.setText("Nice Makeup you have on !");
+                        break;
+                    case "female_eye":
+                    case "male_eye":
+                        cardSubtitleView.setText("You really have a nice eye makeup on !");
+                        break;
+                    case "female_lip":
+                    case "male_lip":
+                        cardSubtitleView.setText("You really have a nice lip makeup on !");
+                        break;
+                    case "female_no":
+                    case "male_no":
+                        cardSubtitleView.setText("Who needs makeup anyway");
+                        break;
+                    default:
+                        cardSubtitleView.setText("FACEAGE==NULL");
+                        break;}
+                break;
+            case "headpose":
+                cardTitleView.setText("Head Pose Mode");
+                switch (attributeDetected) {
+                    case "look_right":
+                        cardSubtitleView.setText("You were looking at your right !");
+                        break;
+                    case "look_left":
+                        cardSubtitleView.setText("You were looking at your left !");
+                        break;
+                    case "look_up":
+                        cardSubtitleView.setText("You were looking up !");
+                        break;
+                    case "look_down":
+                        cardSubtitleView.setText("You were looking down !");
+                        break;
+                    case "lean_right":
+                        cardSubtitleView.setText("You were leaning to your right !");
+                        break;
+                    case "lean_left":
+                        cardSubtitleView.setText("You were leaning to your left !");
+                        break;
+                    case "straight":
+                        cardSubtitleView.setText("You were looking ahead ! ");
+                        break;
+                    default:
+                        cardSubtitleView.setText("HEADPOSE==NULL");
+                        break;}
+
+                break;
+            case "accessories":
+
+                cardTitleView.setText("Accessories Mode");
+                switch (attributeDetected) {
+                    case "no_acc":
+                        cardSubtitleView.setText("You're wearing no accessories !");
+                        break;
+                    case "swimminggoggles":
+                        cardSubtitleView.setText("You have swimming goggles on !");
+                        break;
+                    case "sunglasses":
+                        cardSubtitleView.setText("Nice sunglasses you have there !");
+                        break;
+                    case "readingglasses":
+                        cardSubtitleView.setText("You're wearing glasses !");
+                        break;
+                    case "noglasses":
+                        cardSubtitleView.setText("You're not wearing glasses!");
+                        break;
+                    case "headwear":
+                        cardSubtitleView.setText("You have something on your head !");
+                        break;
+                    case "mask":
+                        cardSubtitleView.setText("You're hiding behind a mask ! ");
+                        break;
+                    default:
+                        cardSubtitleView.setText("ACCESSORIES==NULL");
+                        break;}
 
                 break;
             default:

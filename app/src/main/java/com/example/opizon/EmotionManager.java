@@ -142,7 +142,7 @@ public class EmotionManager {
                 }
             }
 
-            //TODO: save the emotion
+            //TODO: save the attributeDetected
 
         }
     }

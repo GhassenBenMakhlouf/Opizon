@@ -192,7 +192,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="4"/>
                 <TextView
-                    android:text="Wait for it"
+                    android:text="Coming Soon ..."
                     android:layout_gravity="center_horizontal"
                     android:textAlignment="center"
                     android:textSize="18sp"

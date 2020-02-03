@@ -42,6 +42,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public class App3 extends AppCompatActivity {
+
+    String quoteMode;
+    private final String intentQuote = "QUOTE_MODE";
+
     private static final String TAG = "AndroidCameraApi2_App3";
     private Button startButton;
     private TextureView textureView;
@@ -72,6 +76,10 @@ public class App3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app3);
+
+        Intent intent = getIntent();
+        quoteMode = intent.getStringExtra(intentQuote);
+
         textureView = (TextureView) findViewById(R.id.texture);
         assert textureView != null;
         textureView.setSurfaceTextureListener(textureListener);
@@ -217,9 +225,8 @@ public class App3 extends AppCompatActivity {
 
 
                     Intent intent = new Intent(App3.this, QuoteActivity.class);
-                    intent.putExtra("QUOTE_MODE","emotion");
-//                    intent.putExtra("IMAGE", bytes);
-                      startActivity(intent);
+                    intent.putExtra(intentQuote, quoteMode);
+                    startActivity(intent);
 
 
 //                        runOnUiThread(new Runnable() {
@@ -236,7 +243,7 @@ public class App3 extends AppCompatActivity {
 //                        });
 //
 //                        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-//                        QuoteFragment quoteFragment = QuoteFragment.newInstance("emotion", bytes);
+//                        QuoteFragment quoteFragment = QuoteFragment.newInstance("attributeDetected", bytes);
 //                        ft.replace(R.id.fragmentLayout, quoteFragment);
 //                        ft.addToBackStack(null);
 //                        ft.commit();

@@ -17,6 +17,13 @@
     <string name="save_quote">Save</string>
     <string name="share_quote">Share</string>
 
+    <string name="emotion_mode">attributeDetected</string>
+    <string name="faceage_mode">faceage</string>
+    <string name="hair_mode">hair</string>
+    <string name="makeup_mode">makeup</string>
+    <string name="headpose_mode">headpose</string>
+    <string name="accessories_mode">accessories</string>
+
 
 
 </resources>
