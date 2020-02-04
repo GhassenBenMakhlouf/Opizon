@@ -19,6 +19,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextSwitcher;
@@ -26,6 +27,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 import android.widget.ViewSwitcher;
+
+import com.google.android.material.button.MaterialButton;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -43,6 +46,8 @@ public class App1 extends AppCompatActivity {
     private HashMap<String,String[]> db=new HashMap<String,String[]>();
     private final int REQ_CODE = 100;
     TextView textView;
+    TextView wordOverlay;
+    TextView containerUserHelper;
     VideoView videoView;
     LinearLayout wordsContainer;
     Dialog wordsDialog;
@@ -61,6 +66,13 @@ public class App1 extends AppCompatActivity {
         }
         setContentView(R.layout.activity_app1);
         textView = findViewById(R.id.text);
+
+        wordOverlay = findViewById(R.id.word_overlay);
+        wordOverlay.setVisibility(View.INVISIBLE);
+
+        containerUserHelper = findViewById(R.id.container_userhelper);
+        containerUserHelper.setVisibility(View.INVISIBLE);
+
         videoView = findViewById(R.id.video);
         wordsContainer = (LinearLayout) findViewById(R.id.wordsContainer);
         wordsDialog = new Dialog(this);
@@ -202,6 +214,11 @@ public class App1 extends AppCompatActivity {
         Uri videoUri = Uri.parse("android.resource://" + App1.this.getPackageName() + "/raw/" + videosToPlay.get(0));
         videoView.setVideoURI(videoUri);
         videoView.start();
+
+        //overlay manager
+        wordOverlay.setText(videosToPlay.get(0));
+        wordOverlay.setVisibility(VISIBLE);
+
         Log.i("app1", "this video has been played: "+videosToPlay.get(0));
         videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 
@@ -213,12 +230,19 @@ public class App1 extends AppCompatActivity {
                     Uri videoUri = Uri.parse("android.resource://" + App1.this.getPackageName() + "/raw/" + videosToPlay.get(incrementer));
                     videoView.setVideoURI(videoUri);
                     videoView.start();
+
+                    //overlay manager
+                    wordOverlay.setText(videosToPlay.get(incrementer));
+                    wordOverlay.setVisibility(VISIBLE);
                     Log.i("app1", "this video has been played: "+videosToPlay.get(incrementer));
                 }
                 else{
                     incrementer=0;
                     videoView.setVisibility(GONE);
                     videoView.setVisibility(VISIBLE);
+
+                    //overlay manager
+                    wordOverlay.setVisibility(View.INVISIBLE);
                     return;
                 }
 
@@ -231,9 +255,24 @@ public class App1 extends AppCompatActivity {
 
     public void createButtons(){
 
+        //show container helper
+        containerUserHelper.setVisibility(VISIBLE);
+
+        //Get ScrollView and Layout
+        HorizontalScrollView hsv1 = (HorizontalScrollView) findViewById( R.id.hsv);
+        LinearLayout layout = (LinearLayout) hsv1.findViewById( R.id.wordsContainer );
+        layout.removeAllViews();
+
+        //configure layout parameters for buttons
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams( LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT );
+        lp.setMargins( 20, 0, 20, 0 );
+
         for (int i=0;i<seperatedSentence.size();i++){
             Log.i("app1", "part of seperatedSentence: "+seperatedSentence.get(i));
-            Button wordButton = new Button(this);
+
+
+//            Button wordButton = new Button(this);
+            MaterialButton wordButton = new MaterialButton(this, null, R.attr.materialButtonOutlinedStyle);
             wordButton.setText(seperatedSentence.get(i));
             final String actualWord=seperatedSentence.get(i);
             final ArrayList<String> wordsToShow=new ArrayList<String>();
@@ -365,6 +404,11 @@ public class App1 extends AppCompatActivity {
                     wordsDialog.show();
                 }
             });
+
+            //set up the button dynamically
+            wordButton.setLayoutParams(lp);
+            wordButton.setGravity( Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL );
+
             wordsContainer.addView(wordButton);
 
         }

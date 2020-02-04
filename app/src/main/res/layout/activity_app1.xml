@@ -18,21 +18,56 @@
             android:layout_marginBottom="120dp"/>
 
         <TextView
+            android:id="@+id/word_overlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Word"
+            android:textAppearance="@android:style/TextAppearance.Material.Display1"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
             android:id = "@+id/text"
             android:text="click the button"
             android:textSize = "30sp"
             android:layout_width = "wrap_content"
             android:layout_height = "wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_above="@+id/wordsContainer"
-            android:layout_marginBottom="60dp"/>
-        <LinearLayout
-            android:id = "@+id/wordsContainer"
+            android:layout_above="@+id/container_userhelper"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id = "@+id/container_userhelper"
+            android:layout_above="@+id/hsv"
+            android:text="Click on the word to change the meaning :"
+            android:textSize = "18sp"
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:layout_marginBottom="16dp"/>
+
+        <HorizontalScrollView
+            android:id="@+id/hsv"
+            android:scrollbars="none"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_alignParentBottom="true"
-            android:orientation="horizontal" />
+            android:layout_marginBottom = "16dp"
+            >
+            <LinearLayout
+                android:id = "@+id/wordsContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+
+
     </RelativeLayout>
     <RelativeLayout
         android:layout_width = "match_parent"
