@@ -2,14 +2,17 @@ package com.example.opizon;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.ImageFormat;
 import android.graphics.SurfaceTexture;
+import android.graphics.drawable.ColorDrawable;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCaptureSession;
 import android.hardware.camera2.CameraCharacteristics;
@@ -71,6 +74,9 @@ public class App2 extends AppCompatActivity {
     private TextView circleTv;
     private TextView[] taskTxtViews = new TextView[5];
     private TextView[] resultTxtViews = new TextView[5];
+    private int actualCol;
+    private int resultPourcentage;
+    private Dialog resultDialog;
     Map<String, String> equivalentEmotions = new HashMap<String, String>();
     private String[] possibleEmotions = {"happiness","neutral","disgust","sadness","surprise","fear","anger"};
     private static final SparseIntArray ORIENTATIONS = new SparseIntArray();
@@ -114,6 +120,7 @@ public class App2 extends AppCompatActivity {
         resultTxtViews[2] = (TextView) findViewById(R.id.resulttxtview3);
         resultTxtViews[3] = (TextView) findViewById(R.id.resulttxtview4);
         resultTxtViews[4] = (TextView) findViewById(R.id.resulttxtview5);
+        resultDialog = new Dialog(this);
         equivalentEmotions.put("happiness",getResources().getString(R.string.happiness));
         equivalentEmotions.put("neutral",getResources().getString(R.string.neutral));
         equivalentEmotions.put("disgust",getResources().getString(R.string.disgust));
@@ -129,10 +136,13 @@ public class App2 extends AppCompatActivity {
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startButton.setVisibility(View.INVISIBLE);
                 taskNumber=0;
+                actualCol=0;
                 updateTable();
                 initializeEmotionsArrays();
-
+                taskTxtViews[0].setBackgroundColor(getResources().getColor(R.color.colorPrimaryLight));
+                resultTxtViews[0].setBackgroundColor(getResources().getColor(R.color.colorPrimaryLight));
                 new CountDownTimer(25000, 1000){
                     @Override
                     public void onTick(long millisUntilFinished){
@@ -141,11 +151,22 @@ public class App2 extends AppCompatActivity {
                         updateTable();
                         if ((millisUntilFinished/1000)%5==0){
                             takePicture();
+                            actualCol++;
+                            if (actualCol<5){
+                                taskTxtViews[actualCol-1].setBackgroundColor(getResources().getColor(R.color.white));
+                                resultTxtViews[actualCol-1].setBackgroundColor(getResources().getColor(R.color.white));
+
+                                taskTxtViews[actualCol].setBackgroundColor(getResources().getColor(R.color.colorPrimaryLight));
+                                resultTxtViews[actualCol].setBackgroundColor(getResources().getColor(R.color.colorPrimaryLight));
+                            }
+
                             Log.i("app2", "picture took!");
                         }
                     }
                     @Override
                     public void onFinish() {
+                        taskTxtViews[4].setBackgroundColor(getResources().getColor(R.color.white));
+                        resultTxtViews[4].setBackgroundColor(getResources().getColor(R.color.white));
                     }
                 }.start();
             }
@@ -177,6 +198,55 @@ public class App2 extends AppCompatActivity {
                 resultTxtViews[i].setText(getResources().getString(R.string.wait));
             }
         }
+    }
+
+    private void showResults(){
+        startButton.setVisibility(View.VISIBLE);
+        resultPourcentage=0;
+        for (int i=0; i<5;i++) {
+            if (expectedEmotion[i] == detectedEmotion[i]) {
+                resultPourcentage = resultPourcentage + 20;
+            }
+        }
+        TextView txtClose;
+        TextView txtResult;
+        Button btnReplay;
+        resultDialog.setContentView(R.layout.app2_popup);
+        txtClose =(TextView) resultDialog.findViewById(R.id.txtclose);
+        txtResult =(TextView) resultDialog.findViewById(R.id.txtresult);
+        btnReplay = (Button) resultDialog.findViewById(R.id.btnreplay);
+
+        switch (resultPourcentage) {
+            case 0:     txtResult.setText("You got 0%. Don't worry, practice makes perfect!");
+                break;
+            case 20:    txtResult.setText("You got 20%. Don't worry, practice makes perfect!");
+                break;
+            case 40:    txtResult.setText("You got 40%. Not bad, but you can do better!");
+                break;
+            case 60:    txtResult.setText("You got 60%. Good, keep practicing!");
+                break;
+            case 80:    txtResult.setText("You got 80%. Great, you start mastering it!");
+                break;
+            case 100:   txtResult.setText("You got 100%. Wow, you are just perfect!");
+                break;
+            default:    txtResult.setText("Result can't be shown. Try one more time or contact the Admin!");
+                break;
+        }
+        txtClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resultDialog.dismiss();
+            }
+        });
+        btnReplay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resultDialog.dismiss();
+                startButton.performClick();
+            }
+        });
+        resultDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        resultDialog.show();
     }
 
 
@@ -221,7 +291,7 @@ public class App2 extends AppCompatActivity {
         @Override
         public void onCaptureCompleted(CameraCaptureSession session, CaptureRequest request, TotalCaptureResult result) {
             super.onCaptureCompleted(session, request, result);
-            Toast.makeText(App2.this, "Saved:" + file, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(App2.this, "Saved:" + file, Toast.LENGTH_SHORT).show();
             createCameraPreview();
         }
     };
@@ -314,7 +384,7 @@ public class App2 extends AppCompatActivity {
                 @Override
                 public void onCaptureCompleted(CameraCaptureSession session, CaptureRequest request, TotalCaptureResult result) {
                     super.onCaptureCompleted(session, request, result);
-                    Toast.makeText(App2.this, "Saved:" + file, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(App2.this, "Saved:" + file, Toast.LENGTH_SHORT).show();
                     createCameraPreview();
                 }
             };
@@ -516,7 +586,10 @@ public class App2 extends AppCompatActivity {
                         Log.i("app2", "expected "+taskNumber+":  "+expectedEmotion[taskNumber]);
                         Log.i("app2", "result "+taskNumber+":  "+detectedEmotion[taskNumber]);
                         taskNumber++;
-                        if (taskNumber==5){updateTable();}
+                        if (taskNumber==5){
+                            updateTable();
+                            showResults();
+                        }
                     }
                 };
 

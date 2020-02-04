@@ -8,7 +8,7 @@
 <!--    <color name="colorSecondaryVariant">#bdc3c7</color>-->
 <!--    <color name="colorOnSecondary">#2ecc71</color>-->
     <color name="colorAccent">#8e44ad</color>
-
+    <color name="colorPrimaryLight">#60748b</color>
     <color name="colorPrimaryDark">#2f333f</color>
     <color name="bluelight">#49acd5</color>
     <color name="orange">#eaad43</color>
