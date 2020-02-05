@@ -105,8 +105,11 @@ public class App1 extends AppCompatActivity {
                     ArrayList result = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     sentence = (String) result.get(0);
-                    wordsContainer.removeAllViews();
                     textView.setText(sentence);
+                    if (!Character.isLetter(sentence.charAt(sentence.length()-1))){
+                        sentence=sentence.substring(0,sentence.length()-1);
+                    }
+                    wordsContainer.removeAllViews();
                     //sentence=sentence.toLowerCase();
 
                     setVideos();
