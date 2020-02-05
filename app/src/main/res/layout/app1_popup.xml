@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="350dp"
     android:layout_height="475dp"
@@ -84,17 +85,35 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="80dp"
         android:orientation = "vertical">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnconfirm"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+
+            android:alpha="0.75"
+
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+
             android:text="Confirm"
-            android:background="@drawable/buttonstyle"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textSize="16dp"
+
+            app:cornerRadius="25dp"
+
+            app:icon="@drawable/ic_check_circle_black_24dp"
+            app:iconPadding="16dp"
+            app:iconSize="32dp"
+            app:iconTint="@color/white" />
 
     </LinearLayout>
 
