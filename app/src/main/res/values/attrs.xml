@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MyVideoView">
+        <attr name="scaleType" format="integer">
+            <flag name="normal" value="0" />
+            <flag name="centerCrop" value="1" />
+            <flag name="fill" value="2" />
+        </attr>
+    </declare-styleable>
+</resources>
