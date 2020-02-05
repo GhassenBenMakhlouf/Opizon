@@ -48,7 +48,7 @@ public class App1 extends AppCompatActivity {
     TextView textView;
     TextView wordOverlay;
     TextView containerUserHelper;
-    VideoView videoView;
+    MyVideoView videoView;
     LinearLayout wordsContainer;
     Dialog wordsDialog;
     ArrayList<String> videosToPlay=new ArrayList<String>();
@@ -74,6 +74,7 @@ public class App1 extends AppCompatActivity {
         containerUserHelper.setVisibility(View.INVISIBLE);
 
         videoView = findViewById(R.id.video);
+
         wordsContainer = (LinearLayout) findViewById(R.id.wordsContainer);
         wordsDialog = new Dialog(this);
         ImageView speak = findViewById(R.id.speak);
@@ -216,7 +217,7 @@ public class App1 extends AppCompatActivity {
         videoView.start();
 
         //overlay manager
-        wordOverlay.setText(videosToPlay.get(0));
+        wordOverlay.setText(seperatedSentence.get(0));
         wordOverlay.setVisibility(VISIBLE);
 
         Log.i("app1", "this video has been played: "+videosToPlay.get(0));
@@ -232,7 +233,7 @@ public class App1 extends AppCompatActivity {
                     videoView.start();
 
                     //overlay manager
-                    wordOverlay.setText(videosToPlay.get(incrementer));
+                    wordOverlay.setText(seperatedSentence.get(incrementer));
                     wordOverlay.setVisibility(VISIBLE);
                     Log.i("app1", "this video has been played: "+videosToPlay.get(incrementer));
                 }

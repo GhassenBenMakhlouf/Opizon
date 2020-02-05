@@ -1,23 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:orientation="vertical"
-tools:context=".App3">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".App3">
 <TextureView
     android:id="@+id/texture"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_above="@+id/btn_start"
     android:layout_alignParentTop="true"/>
-<Button
-    android:id="@+id/btn_start"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    android:layout_centerHorizontal="true"
-    android:layout_marginBottom="16dp"
-    android:layout_marginTop="16dp"
-    android:text="Start" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_start"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+
+
+        android:layout_marginBottom="55dp"
+        android:alpha="0.75"
+
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="18dp"
+        android:paddingBottom="18dp"
+
+        android:text="PHOTO"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+
+        app:cornerRadius="30dp"
+        app:elevation="50dp"
+
+        app:icon="@drawable/ic_camera_black_24dp"
+        app:iconPadding="16dp"
+        app:iconSize="32dp"
+        app:iconTint="@color/white" />
 </RelativeLayout>
