@@ -15,7 +15,7 @@
         <AbsoluteLayout
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
-            android:layout_marginBottom="200dp"
+            android:layout_marginBottom="220dp"
             android:background="@android:color/black">
             <com.example.opizon.MyVideoView
                 android:id="@+id/video"
@@ -52,7 +52,10 @@
             android:layout_height = "wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_above="@+id/container_userhelper"
-            android:layout_marginBottom="16dp"/>
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="40dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"/>
 
         <TextView
             android:id = "@+id/container_userhelper"
@@ -61,7 +64,9 @@
             android:textSize = "18sp"
             android:layout_width = "wrap_content"
             android:layout_height = "wrap_content"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"/>
 
         <HorizontalScrollView
             android:id="@+id/hsv"
