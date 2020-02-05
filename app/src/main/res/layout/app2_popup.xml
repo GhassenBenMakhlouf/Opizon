@@ -27,17 +27,24 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="375dp"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:gravity="center">
 
         <TextView
             android:id="@+id/txtresult"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Result can't be shown. Try one more time or contact the Admin!"
             android:textAppearance="@android:style/TextAppearance.Material.Widget.ActionMode.Title"
             android:textColor="@color/white"
-            android:textSize="36sp"/>
+            android:textSize="36sp"
+            android:layout_marginBottom="20dp"/>
+        <ImageView
+            android:id="@+id/imgresult"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/problem"/>
 
 
     </LinearLayout>

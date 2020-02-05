@@ -210,26 +210,35 @@ public class App2 extends AppCompatActivity {
         }
         TextView txtClose;
         TextView txtResult;
+        ImageView imgResult;
         Button btnReplay;
         resultDialog.setContentView(R.layout.app2_popup);
         txtClose =(TextView) resultDialog.findViewById(R.id.txtclose);
         txtResult =(TextView) resultDialog.findViewById(R.id.txtresult);
+        imgResult =(ImageView) resultDialog.findViewById(R.id.imgresult);
         btnReplay = (Button) resultDialog.findViewById(R.id.btnreplay);
 
         switch (resultPourcentage) {
             case 0:     txtResult.setText("You got 0%. Don't worry, practice makes perfect!");
+                        imgResult.setImageResource(R.drawable.r0);
                 break;
             case 20:    txtResult.setText("You got 20%. Don't worry, practice makes perfect!");
+                        imgResult.setImageResource(R.drawable.r20);
                 break;
             case 40:    txtResult.setText("You got 40%. Not bad, but you can do better!");
+                        imgResult.setImageResource(R.drawable.r40);
                 break;
             case 60:    txtResult.setText("You got 60%. Good, keep practicing!");
+                        imgResult.setImageResource(R.drawable.r60);
                 break;
             case 80:    txtResult.setText("You got 80%. Great, you start mastering it!");
+                        imgResult.setImageResource(R.drawable.r80);
                 break;
             case 100:   txtResult.setText("You got 100%. Wow, you are just perfect!");
+                        imgResult.setImageResource(R.drawable.r100);
                 break;
             default:    txtResult.setText("Result can't be shown. Try one more time or contact the Admin!");
+                        imgResult.setImageResource(R.drawable.problem);
                 break;
         }
         txtClose.setOnClickListener(new View.OnClickListener() {
