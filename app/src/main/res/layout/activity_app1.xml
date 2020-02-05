@@ -12,15 +12,23 @@
         android:layout_weight="17"
         android:layout_width="match_parent"
         android:layout_height="0dp">
-        <com.example.opizon.MyVideoView
-            android:id="@+id/video"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            custom:scaleType="fill"
+        <AbsoluteLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="200dp"
+            android:background="@android:color/black">
+            <com.example.opizon.MyVideoView
+                android:id="@+id/video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                custom:scaleType="centerCrop"
+                android:layout_x="45dip"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                />
 
-            android:focusable="false"
-            android:focusableInTouchMode="false"
-            android:layout_marginBottom="250dp"/>
+        </AbsoluteLayout>
+
 
         <TextView
             android:id="@+id/word_overlay"
