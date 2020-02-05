@@ -1,4 +1,4 @@
-package com.example.opizon;
+package com.example.opizon.App3;
 
 import android.Manifest;
 import android.content.Context;
@@ -33,6 +33,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+
+import com.example.opizon.Utils.ImageHelper;
+import com.example.opizon.R;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

@@ -17,7 +17,7 @@
             android:layout_height="fill_parent"
             android:layout_marginBottom="220dp"
             android:background="@android:color/black">
-            <com.example.opizon.MyVideoView
+            <com.example.opizon.Views.MyVideoView
                 android:id="@+id/video"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

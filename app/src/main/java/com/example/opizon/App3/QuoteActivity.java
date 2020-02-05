@@ -1,4 +1,4 @@
-package com.example.opizon;
+package com.example.opizon.App3;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -27,10 +27,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.opizon.BuildConfig;
+import com.example.opizon.R;
 import com.google.common.collect.ListMultimap;
 import com.microsoft.projectoxford.face.FaceServiceClient;
 import com.microsoft.projectoxford.face.FaceServiceRestClient;
@@ -63,8 +64,8 @@ import com.microsoft.projectoxford.face.contract.Hair;
 import com.microsoft.projectoxford.face.contract.HeadPose;
 import com.microsoft.projectoxford.face.contract.Makeup;
 
-import static com.example.opizon.BitmapUtils.blur;
-import static com.example.opizon.BitmapUtils.darkenBitMap;
+import static com.example.opizon.Utils.BitmapUtils.blur;
+import static com.example.opizon.Utils.BitmapUtils.darkenBitMap;
 
 public class QuoteActivity extends AppCompatActivity {
 
@@ -668,145 +669,190 @@ public class QuoteActivity extends AppCompatActivity {
         switch (quoteMode) {
             case "emotion":
                 cardTitleView.setText("Emotion Mode");
-                cardImageView.setImageResource(R.drawable.ic_emotion_mode);
                 switch (attributeDetected) {
                     case "anger":
                         cardSubtitleView.setText("You look angry today !");
+                        cardImageView.setImageResource(R.drawable.emotion_anger);
                         break;
                     case "contempt":
                         cardSubtitleView.setText("Your Face shows clearly contempt !");
+                        cardImageView.setImageResource(R.drawable.emotion_contempt);
                         break;
                     case "disgust":
                         cardSubtitleView.setText("What's disgusting here ?");
+                        cardImageView.setImageResource(R.drawable.emotion_disgust);
                         break;
                     case "fear":
                         cardSubtitleView.setText("What are you scared of ?");
+                        cardImageView.setImageResource(R.drawable.emotion_fear);
                         break;
                     case "happiness":
                         cardSubtitleView.setText("You seem to be happy today ! Nice !");
+                        cardImageView.setImageResource(R.drawable.emotion_happiness);
                         break;
                     case "neutral":
                         cardSubtitleView.setText("Your face doesn't show any emotion ! ");
+                        cardImageView.setImageResource(R.drawable.emotion_neutral);
                         break;
                     case "sadness":
                         cardSubtitleView.setText("Stop being sad and be awesome instead !");
+                        cardImageView.setImageResource(R.drawable.emotion_sadness);
                         break;
                     case "surprise":
                         cardSubtitleView.setText("You seem surprised right now !");
+                        cardImageView.setImageResource(R.drawable.emotion_surprise);
                         break;
                     default:
                         cardSubtitleView.setText("Your Emotion is like John Cena, we can't see it");
+                        cardImageView.setImageResource(R.drawable.ic_emotion_mode);
                         break;
                 }
                 break;
 
             case "faceage":
                 cardTitleView.setText("Face Age Mode");
-                cardImageView.setImageResource(R.drawable.ic_faceage_mode);
                 switch (attributeDetected) {
                     case "kid":
                         cardSubtitleView.setText("You look like you're a kid (age lower than or equal to 12)");
+                        cardImageView.setImageResource(R.drawable.faceage_kid);
                         break;
                     case "teenager":
                         cardSubtitleView.setText("You look like you're a teenager (age between 13 and 18)");
+                        cardImageView.setImageResource(R.drawable.faceage_teenager);
                         break;
                     case "youngadult":
                         cardSubtitleView.setText("You look like you're a young adult (age between 19 and 35)");
+                        cardImageView.setImageResource(R.drawable.faceage_youngadult);
                         break;
                     case "adult":
                         cardSubtitleView.setText("You look like you're an adult (age between 36 and 64)");
+                        cardImageView.setImageResource(R.drawable.faceage_adult);
                         break;
                     case "elderly":
                         cardSubtitleView.setText("You look like you're a teenager (age higher than or equal to 65)");
+                        cardImageView.setImageResource(R.drawable.faceage_elderly);
                         break;
                     default:
                         cardSubtitleView.setText("Your Face is like John Cena, we can't see it");
+                        cardImageView.setImageResource(R.drawable.ic_faceage_mode);
                         break;}
 
                 break;
             case "hair":
                 cardTitleView.setText("Hair Mode");
-                cardImageView.setImageResource(R.drawable.ic_hair_mode);
                 switch (attributeDetected) {
                     case "beard":
                         cardSubtitleView.setText("You really have a nice beard !");
+                        cardImageView.setImageResource(R.drawable.hair_beard);
                         break;
                     case "moustache":
                         cardSubtitleView.setText("You really have a nice moustache !");
+                        cardImageView.setImageResource(R.drawable.hair_moustache);
                         break;
                     case "invisible":
                         cardSubtitleView.setText("Don't hide your hair !");
+                        cardImageView.setImageResource(R.drawable.hair_invisible);
                         break;
                     case "bald":
                         cardSubtitleView.setText("Your baldness is really special !");
+                        cardImageView.setImageResource(R.drawable.hair_bald);
                         break;
                     case "other":
                     case "unknown":
                         cardSubtitleView.setText("What colour is your hair ?");
+                        cardImageView.setImageResource(R.drawable.hair_unknown);
                         break;
                     case "black":
+                        cardSubtitleView.setText("You have a really nice black hair !");
+                        cardImageView.setImageResource(R.drawable.hair_black);
+                        break;
                     case "blond":
+                        cardSubtitleView.setText("You have a really nice blond hair !");
+                        cardImageView.setImageResource(R.drawable.hair_blond);
+                        break;
                     case "brown":
+                        cardSubtitleView.setText("You have a really nice brown hair !");
+                        cardImageView.setImageResource(R.drawable.hair_brown);
+                        break;
                     case "gray":
+                        cardSubtitleView.setText("You have a really nice gray hair !");
+                        cardImageView.setImageResource(R.drawable.hair_gray);
+                        break;
                     case "red":
+                        cardSubtitleView.setText("You have a really nice red hair !");
+                        cardImageView.setImageResource(R.drawable.hair_red);
+                        break;
                     case "white":
-                        cardSubtitleView.setText("You have a really nice "+attributeDetected+" hair !");
+                        cardSubtitleView.setText("You have a really nice white hair !");
+                        cardImageView.setImageResource(R.drawable.hair_gray);
                         break;
                     default:
                         cardSubtitleView.setText("Your Hair is like John Cena, we can't see it");
+                        cardImageView.setImageResource(R.drawable.ic_hair_mode);
                         break;}
                 break;
             case "makeup":
                 cardTitleView.setText("Makeup Mode");
-                cardImageView.setImageResource(R.drawable.ic_makeup_mode);
                 switch (attributeDetected) {
                     case "female_both":
                     case "male_both":
                         cardSubtitleView.setText("Nice Makeup you have on !");
+                        cardImageView.setImageResource(R.drawable.makeup_full);
                         break;
                     case "female_eye":
                     case "male_eye":
                         cardSubtitleView.setText("You really have a nice eye makeup on !");
+                        cardImageView.setImageResource(R.drawable.makeup_eye);
                         break;
                     case "female_lip":
                     case "male_lip":
                         cardSubtitleView.setText("You really have a nice lip makeup on !");
+                        cardImageView.setImageResource(R.drawable.makeup_lip);
                         break;
                     case "female_no":
                     case "male_no":
                         cardSubtitleView.setText("Who needs makeup anyway");
+                        cardImageView.setImageResource(R.drawable.makeup_no);
                         break;
                     default:
                         cardSubtitleView.setText("FYour Face Age is like John Cena, we can't see it");
+                        cardImageView.setImageResource(R.drawable.ic_makeup_mode);
                         break;}
                 break;
             case "headpose":
                 cardTitleView.setText("Head Pose Mode");
-                cardImageView.setImageResource(R.drawable.ic_headpose_mode);
                 switch (attributeDetected) {
                     case "look_right":
                         cardSubtitleView.setText("You were looking at your right !");
+                        cardImageView.setImageResource(R.drawable.headpose_right);
                         break;
                     case "look_left":
                         cardSubtitleView.setText("You were looking at your left !");
+                        cardImageView.setImageResource(R.drawable.headpose_left);
                         break;
                     case "look_up":
                         cardSubtitleView.setText("You were looking up !");
+                        cardImageView.setImageResource(R.drawable.headpose_up);
                         break;
                     case "look_down":
                         cardSubtitleView.setText("You were looking down !");
+                        cardImageView.setImageResource(R.drawable.headpose_down);
                         break;
                     case "lean_right":
                         cardSubtitleView.setText("You were leaning to your right !");
+                        cardImageView.setImageResource(R.drawable.headpose_lean_right);
                         break;
                     case "lean_left":
                         cardSubtitleView.setText("You were leaning to your left !");
+                        cardImageView.setImageResource(R.drawable.headpose_lean_left);
                         break;
                     case "straight":
                         cardSubtitleView.setText("You were looking ahead ! ");
+                        cardImageView.setImageResource(R.drawable.headpose_straight);
                         break;
                     default:
-                        cardSubtitleView.setText("Your Head Pose is like John Cena, we can't see it==NULL");
+                        cardSubtitleView.setText("Your Head Pose is like John Cena, we can't see it");
+                        cardImageView.setImageResource(R.drawable.ic_headpose_mode);
                         break;}
 
                 break;
@@ -817,32 +863,41 @@ public class QuoteActivity extends AppCompatActivity {
                 switch (attributeDetected) {
                     case "no_acc":
                         cardSubtitleView.setText("You're wearing no accessories !");
+                        cardImageView.setImageResource(R.drawable.makeup_no);
                         break;
                     case "swimminggoggles":
                         cardSubtitleView.setText("You have swimming goggles on !");
+                        cardImageView.setImageResource(R.drawable.accessories_goggles);
                         break;
                     case "sunglasses":
                         cardSubtitleView.setText("Nice sunglasses you have there !");
+                        cardImageView.setImageResource(R.drawable.accessories_sunglasses);
                         break;
                     case "readingglasses":
                         cardSubtitleView.setText("You're wearing glasses !");
+                        cardImageView.setImageResource(R.drawable.accessories_glasses);
                         break;
                     case "noglasses":
                         cardSubtitleView.setText("You're not wearing glasses!");
+                        cardImageView.setImageResource(R.drawable.makeup_no);
                         break;
                     case "headwear":
                         cardSubtitleView.setText("You have something on your head !");
+                        cardImageView.setImageResource(R.drawable.accessories_headwear);
                         break;
                     case "mask":
                         cardSubtitleView.setText("You're hiding behind a mask ! ");
+                        cardImageView.setImageResource(R.drawable.accessories_mask);
                         break;
                     default:
                         cardSubtitleView.setText("Your Head Pose is like John Cena, we can't see it");
+                        cardImageView.setImageResource(R.drawable.ic_accessories_mode);
                         break;}
 
                 break;
             default:
                 cardTitleView.setText("Your QuotingMode is like John Cena, we can't see it");
+                cardImageView.setImageResource(R.drawable.app3);
                 break;
         }
     }

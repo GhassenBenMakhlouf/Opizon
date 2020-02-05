@@ -1,4 +1,4 @@
-package com.example.opizon;
+package com.example.opizon.App3;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -6,6 +6,9 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.opizon.App3.App3;
+import com.example.opizon.R;
 
 public class App3ModeActivity extends AppCompatActivity implements View.OnClickListener {
 

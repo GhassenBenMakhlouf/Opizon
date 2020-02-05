@@ -1,4 +1,4 @@
-package com.example.opizon;
+package com.example.opizon.Views;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -6,6 +6,8 @@ import android.media.MediaMetadataRetriever;
 import android.net.Uri;
 import android.util.AttributeSet;
 import android.widget.VideoView;
+
+import com.example.opizon.R;
 
 public class MyVideoView extends VideoView {
     private static final int SCALE_TYPE_NORMAL = 0;

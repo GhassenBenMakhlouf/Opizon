@@ -1,4 +1,4 @@
-package com.example.opizon;
+package com.example.opizon.Utils;
 
 import android.content.Context;
 import android.graphics.Bitmap;

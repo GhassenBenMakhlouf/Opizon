@@ -1,4 +1,4 @@
-package com.example.opizon;
+package com.example.opizon.Utils;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

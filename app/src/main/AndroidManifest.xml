@@ -16,7 +16,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".App3ModeActivity"></activity>
+        <activity android:name=".App3.App3ModeActivity"></activity>
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -32,15 +32,15 @@
             android:name="org.apache.http.legacy"
             android:required="false" />
 
-        <activity android:name=".QuoteActivity" />
+        <activity android:name=".App3.QuoteActivity" />
         <activity
-            android:name=".App1"
+            android:name=".App1.App1"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".App2"
+            android:name=".App2.App2"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".App3"
+            android:name=".App3.App3"
             android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
