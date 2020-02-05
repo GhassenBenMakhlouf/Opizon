@@ -47,6 +47,18 @@
                 android:textAppearance="@android:style/TextAppearance.Material.Widget.ActionMode.Title"
                 />
 
+                <ImageView
+                    android:id="@+id/card_image"
+                    android:src="@drawable/hourglass"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+
+                  />
+
             <TextView
                 android:id="@+id/card_subtitle"
                 android:layout_width="match_parent"
@@ -57,6 +69,8 @@
                 android:layout_marginEnd="16dp"
                 app:layout_constraintTop_toBottomOf="@id/card_title"
                 app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/card_image"
+
                 android:textAppearance="@android:style/TextAppearance.Material.Widget.ActionBar.Subtitle"/>
 
 
@@ -109,55 +123,5 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
-
-<!--    <com.google.android.material.card.MaterialCardView-->
-<!--        style="@style/Widget.MaterialComponents.CardView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:layout_weight="25"-->
-<!--        android:layout_marginLeft="@dimen/mtrl_card_spacing"-->
-<!--        android:layout_marginTop="@dimen/mtrl_card_spacing"-->
-<!--        android:layout_marginRight="@dimen/mtrl_card_spacing"-->
-<!--        android:minHeight="200dp">-->
-
-<!--        &lt;!&ndash; Card contents. &ndash;&gt;-->
-
-<!--    </com.google.android.material.card.MaterialCardView>-->
-
-<!--    <GridLayout-->
-<!--        android:id="@+id/grid"-->
-<!--        android:layout_weight="10"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:layout_gravity="center_horizontal"-->
-<!--        android:useDefaultMargins="true"-->
-<!--        android:clipToPadding="false"-->
-<!--        android:orientation="horizontal"-->
-<!--        android:columnCount="2">-->
-
-<!--        <com.google.android.material.button.MaterialButton-->
-<!--            android:id="@+id/btn_save"-->
-<!--            style="@style/Widget.MaterialComponents.Button.Icon"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@string/save_quote"-->
-<!--            android:layout_columnWeight="0.7"-->
-<!--            android:layout_gravity="center"-->
-<!--            app:icon="@drawable/save_black_24x24"-->
-<!--            android:layout_column="1"-->
-<!--            />-->
-
-<!--        <com.google.android.material.button.MaterialButton-->
-<!--            android:id="@+id/btn_back"-->
-<!--            style="@style/Widget.MaterialComponents.Button.Icon"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_columnWeight="0.7"-->
-<!--            android:text="back"-->
-<!--            android:layout_column="0"-->
-<!--            app:icon="@drawable/arrow_back_black_24x24"/>-->
-<!--    </GridLayout>-->
-
 
 </RelativeLayout>

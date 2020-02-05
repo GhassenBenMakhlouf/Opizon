@@ -357,8 +357,9 @@ public class QuoteActivity extends AppCompatActivity {
                         //update Cards Elements
                         TextView cardTitleView = findViewById(R.id.card_title);
                         TextView cardSubtitleView = findViewById(R.id.card_subtitle);
+                        ImageView cardImageView = findViewById(R.id.card_image);
 
-                        drawTextOnCard(cardTitleView, cardSubtitleView);
+                        drawTextOnCard(cardTitleView, cardSubtitleView, cardImageView);
 
                         saveBitmapInUri(newBitmap);
                         setImageBitmap(newBitmap);
@@ -660,13 +661,14 @@ public class QuoteActivity extends AppCompatActivity {
 //        } else {
 //            return new String[]{"Cherish those you have in your life, but for this App mode to work you need to be alone in the picture.", "App Developers"};
 //        }
-        return new String[]{"No Face Detected","Confused Devs"};
+        return new String[]{"Your face is like John Cena, we can't see it","Confused Devs"};
     }
 
-    private void drawTextOnCard(TextView cardTitleView, TextView cardSubtitleView){
+    private void drawTextOnCard(TextView cardTitleView, TextView cardSubtitleView, ImageView cardImageView){
         switch (quoteMode) {
             case "emotion":
                 cardTitleView.setText("Emotion Mode");
+                cardImageView.setImageResource(R.drawable.ic_emotion_mode);
                 switch (attributeDetected) {
                     case "anger":
                         cardSubtitleView.setText("You look angry today !");
@@ -684,7 +686,7 @@ public class QuoteActivity extends AppCompatActivity {
                         cardSubtitleView.setText("You seem to be happy today ! Nice !");
                         break;
                     case "neutral":
-                        cardSubtitleView.setText("Your face doesn't show any attributeDetected ! ");
+                        cardSubtitleView.setText("Your face doesn't show any emotion ! ");
                         break;
                     case "sadness":
                         cardSubtitleView.setText("Stop being sad and be awesome instead !");
@@ -693,13 +695,14 @@ public class QuoteActivity extends AppCompatActivity {
                         cardSubtitleView.setText("You seem surprised right now !");
                         break;
                     default:
-                        cardSubtitleView.setText("EMOTION==NULL");
+                        cardSubtitleView.setText("Your Emotion is like John Cena, we can't see it");
                         break;
                 }
                 break;
 
             case "faceage":
                 cardTitleView.setText("Face Age Mode");
+                cardImageView.setImageResource(R.drawable.ic_faceage_mode);
                 switch (attributeDetected) {
                     case "kid":
                         cardSubtitleView.setText("You look like you're a kid (age lower than or equal to 12)");
@@ -717,12 +720,13 @@ public class QuoteActivity extends AppCompatActivity {
                         cardSubtitleView.setText("You look like you're a teenager (age higher than or equal to 65)");
                         break;
                     default:
-                        cardSubtitleView.setText("FACEAGE==NULL");
+                        cardSubtitleView.setText("Your Face is like John Cena, we can't see it");
                         break;}
 
                 break;
             case "hair":
                 cardTitleView.setText("Hair Mode");
+                cardImageView.setImageResource(R.drawable.ic_hair_mode);
                 switch (attributeDetected) {
                     case "beard":
                         cardSubtitleView.setText("You really have a nice beard !");
@@ -749,11 +753,12 @@ public class QuoteActivity extends AppCompatActivity {
                         cardSubtitleView.setText("You have a really nice "+attributeDetected+" hair !");
                         break;
                     default:
-                        cardSubtitleView.setText("HAIR==NULL");
+                        cardSubtitleView.setText("Your Hair is like John Cena, we can't see it");
                         break;}
                 break;
             case "makeup":
                 cardTitleView.setText("Makeup Mode");
+                cardImageView.setImageResource(R.drawable.ic_makeup_mode);
                 switch (attributeDetected) {
                     case "female_both":
                     case "male_both":
@@ -772,11 +777,12 @@ public class QuoteActivity extends AppCompatActivity {
                         cardSubtitleView.setText("Who needs makeup anyway");
                         break;
                     default:
-                        cardSubtitleView.setText("FACEAGE==NULL");
+                        cardSubtitleView.setText("FYour Face Age is like John Cena, we can't see it");
                         break;}
                 break;
             case "headpose":
                 cardTitleView.setText("Head Pose Mode");
+                cardImageView.setImageResource(R.drawable.ic_headpose_mode);
                 switch (attributeDetected) {
                     case "look_right":
                         cardSubtitleView.setText("You were looking at your right !");
@@ -800,13 +806,14 @@ public class QuoteActivity extends AppCompatActivity {
                         cardSubtitleView.setText("You were looking ahead ! ");
                         break;
                     default:
-                        cardSubtitleView.setText("HEADPOSE==NULL");
+                        cardSubtitleView.setText("Your Head Pose is like John Cena, we can't see it==NULL");
                         break;}
 
                 break;
             case "accessories":
 
                 cardTitleView.setText("Accessories Mode");
+                cardImageView.setImageResource(R.drawable.ic_accessories_mode);
                 switch (attributeDetected) {
                     case "no_acc":
                         cardSubtitleView.setText("You're wearing no accessories !");
@@ -830,12 +837,12 @@ public class QuoteActivity extends AppCompatActivity {
                         cardSubtitleView.setText("You're hiding behind a mask ! ");
                         break;
                     default:
-                        cardSubtitleView.setText("ACCESSORIES==NULL");
+                        cardSubtitleView.setText("Your Head Pose is like John Cena, we can't see it");
                         break;}
 
                 break;
             default:
-                cardTitleView.setText("QUOTING MODE == NULL");
+                cardTitleView.setText("Your QuotingMode is like John Cena, we can't see it");
                 break;
         }
     }
