@@ -107,17 +107,17 @@ public class App1 extends AppCompatActivity {
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     sentence = (String) result.get(0);
                     textView.setText(sentence);
-                    if (!Character.isLetter(sentence.charAt(sentence.length()-1))){
-                        sentence=sentence.substring(0,sentence.length()-1);
+                    for (int i=0; i<sentence.length()-1;i++){
+                        sentence = sentence.replaceAll("[^-a-zA-Z' ]","");
                     }
                     wordsContainer.removeAllViews();
                     //sentence=sentence.toLowerCase();
 
                     setVideos();
-                    playVideos();
-                    createButtons();
-
-
+                    if (videosToPlay.size()!=0){
+                        playVideos();
+                        createButtons();
+                    }
                 }
                 break;
             }
