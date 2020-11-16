@@ -18,7 +18,7 @@ This is how the UI looks like:
   <img src="./images/sign_it_1.png" alt="drawing" width="70%"/>
 </p>
 
-If you click on a word, you can view the different meanings and select the convinient one.
+If you click on a word, you can view the different meanings and select the suitable one.
 
 <p align="center">
   <img src="./images/sign_it_2.png" alt="drawing" width="20%"/>
